@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <menu></menu>
+            <a href="home.html">home</a>
+        </nav>
+    </header>
+
+    <header>
+        <h3>Thanh toán</h3>
+    </header>
+
+    <main id="gio-hang" class="clear-fix">
+        <div class="danh-sach-gio-hang " id="danh-sach-gio-hang">
+           
+            
+        </div>
+
+        <div class="thanh-toan">
+            <h3>Thanh Toán</h3>
+            <div class="form">
+                <div class="danh-muc">
+                    <label for="hoTen">
+                        <i class="fas fa-user-edit"></i>
+                    </label>
+                    <input type="text" id="hoTen" placeholder="Họ và tên">
+                    <div class="hien-thi-loi">
+                        abc
+                    </div>
+                </div>
+
+                <div class="danh-muc">
+                    <label for="diaChi">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </label>
+                    <input type="text" id="diaChi" placeholder="Địa chỉ nhận hàng">
+                    <div class="hien-thi-loi">
+                        abc
+                    </div>
+                </div>
+
+                <div class="danh-muc">
+                    <label for="soDienThoai">
+                        <i class="fas fa-mobile-alt"></i>
+                    </label>
+                    <input type="number" id="soDienThoai" placeholder="Số điện thoại">
+                    <div class="hien-thi-loi">
+                        abc
+                    </div>
+                </div>
+
+                <div class="danh-muc">
+                    <label for="gioNhanHang">
+                        <i class="far fa-clock"></i>
+                    </label>
+                    <input type="text" id="gioNhanHang" placeholder="Thời gian nhận hàng (8 - 18h)">
+                    <div class="hien-thi-loi">
+                        abc
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="thanh-tien">
+                <div class="danh-muc-thanh-toan gia-tam-tinh">
+                    <span>Tạm tính</span>
+                    <span id="gia-tam-tinh">12.000.000đ</span>
+                </div>
+                <div class="danh-muc-thanh-toan phi-van-chuyen">
+                    <span>Phí vận chuyển</span>
+                    <span>0.000đ</span>
+                </div>
+                <div class="danh-muc-thanh-toan tong-tien">
+                    <span>Tổng tiền</span>
+                    <span id="tong-tien">12.000.000đ</span>
+                </div>
+            </div>
+            <div class="xac-nhan-thanh-toan">
+                <button id="xac-nhan-thanh-toan">Xác nhận đơn hàng</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+  
+        <button><i class="fas fa-minus"></i></button>
+    </footer>
+</body>
+
+<script>
+    hienThiGioHang();
+    function hienThiGioHang() {
+        let nodeHienThi = document.getElementById('danh-sach-gio-hang');
+        nodeHienThi.innerHTML = HTMLDanhSachGioHang();
+    }
+
+    function checkInputThemSanPham() {
+        var check = true;
+        let nodeInput = document.querySelectorAll('.form-input-san-pham input[required]');
+
+
+        let nodeHienThiLoi = document.getElementsByClassName('hien-thi-loi')
+
+
+        for (let i = 0; i < nodeInput.length; i++) {
+            if (nodeInput[i].value == '') {
+                check = false;
+                if (nodeInput[i].id == 'hinhAnh') {
+                    var tenLoi = 'Hình ảnh';
+                }
+                if (nodeInput[i].id == 'tenSanPham') {
+                    var tenLoi = 'Tên sản phẩm';
+                }
+                if (nodeInput[i].id == 'giaGoc') {
+                    var tenLoi = 'Giá gốc sản phẩm';
+                }
+                if (nodeInput[i].id == 'phanTramGiamGia') {
+                    var tenLoi = 'Phần trăm giảm giá';
+                }
+
+                nodeHienThiLoi[i].innerHTML = tenLoi + ' không được bỏ trống!';
+            } else {
+                if (nodeInput[i].id == 'hinhAnh') {
+                    nodeHienThiLoi[i].innerHTML = '';
+                    var hinhAnh = nodeInput[i].value;
+                }
+                if (nodeInput[i].id == 'tenSanPham') {
+                    nodeHienThiLoi[i].innerHTML = '';
+                    var tenSanPham = nodeInput[i].value;
+                }
+                if (nodeInput[i].id == 'giaGoc') {
+                    if (nodeInput[i].value < 0) {
+                        check = false;
+                        nodeHienThiLoi[i].innerHTML = 'Giá gốc không thể âm!';
+
+                    } else {
+                        var giaGoc = nodeInput[i].value;
+                    }
+                }
+                if (nodeInput[i].id == 'phanTramGiamGia') {
+                    if (nodeInput[i].value < 0 || nodeInput[i].value > 100) {
+                        check = false;
+                        nodeHienThiLoi[i].innerHTML = 'Vui lòng nhập trong khoảng từ 0 - 100';
+
+                    } else {
+                        var phanTramGiamGia = nodeInput[i].value;
+                    }
+                }
+            }
+
+        }
+
+        console.log(nodeInput);
+        if (check != false) {
+            let sanpham = sanPham(hinhAnh, tenSanPham, giaGoc, phanTramGiamGia);
+            console.log('sanpham');
+            console.log(sanpham);
+            themSanPham(sanpham);
+        }
+    }
+
+    hienThiTongTien();
+
+function hienThiTongTien() {
+    var nodeTamTinh = document.querySelector('#gia-tam-tinh');
+    var nodeTongTien = document.querySelector('#tong-tien');
+    console.log(nodeTamTinh);
+    nodeTamTinh.innerHTML = tongTien();
+    nodeTongTien.innerHTML = tongTien();
+
+}
+   
+
+</script>
+
+</html>

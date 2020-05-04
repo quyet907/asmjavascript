@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="container-fluid header-top">
+        <div class="container">
+            <div class="login-signup-label">
+                <ul>
+                    <li>
+                        <a href="#" onclick="openModal()">Đăng nhập</a>
+                        <div class="modal" id="modal">
+                            <div class="form">
+                                <div class="header">
+                                    <h1>Đăng nhập</h1>
+                                    <span onclick="closeModal()" id="close">&times;</span>
+                                </div>
+                                <div class="main-content">
+                                    <label for="username">Tên đăng nhập</label>
+                                    <input type="text" name="" id="username">
+                                    
+                    
+                                    <label for="password">Mật khẩu</label>
+                                    <input type="password" id="password">
+                                </div>
+                    
+                                <div class="container-btn">
+                                    <button onclick="checkLogin()">Đăng nhập</button>
+                                </div>
+                                <div class="hien-thi-loi">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="#">Đăng kí</a></li>
+                </ul>
+               
+            </div>
+         
+        </div>
+    </div>
+    <header>
+        <nav>
+            <menu>
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Trang chủ</a></li>
+                </ul>
+            </menu>
+            <a href="cart.html">cart</a>
+
+            <div class="container " id="them-san-pham-moi">
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                    <i class="fas fa-plus-circle" style="font-size: 32px;"></i>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog ">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Thêm sản phẩm</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-input-san-pham">
+                                    <label for="hinhAnh">Hình ảnh sản phẩm</label>
+                                    <input required type="text" class="form-control" id="hinhAnh">
+                                    <div class="hien-thi-loi">
+                                        <p>abc</p>
+                                    </div>
+
+                                    <label for="tenSanPham">Tên sản phẩm</label>
+                                    <input required type="text" class="form-control" id="tenSanPham">
+                                    <div class="hien-thi-loi">
+                                        <p>abc</p>
+                                    </div>
+
+                                    <label for="giaGoc">Giá gốc sản phẩm</label>
+                                    <input required type="number" class="form-control" id="giaGoc">
+                                    <div class="hien-thi-loi">
+                                        <p>abc</p>
+                                    </div>
+
+                                    <label for="phanTramGiamGia">Phần trăm giảm giá (0-100)</label>
+                                    <input required type="number" class="form-control" id="phanTramGiamGia">
+                                    <div class="hien-thi-loi">
+                                        <p>abc</p>
+                                    </div>
+
+                                    <label for="loaiSanPham" style="width: fit-content;">Loại sản phẩm</label>
+                                    <select class="btn btn-primary" id="loaiSanPham">
+                                        <option value="dienThoai">Điện thoại</option>
+                                        <option value="laptop">Laptop</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" id="btn-them-san-pham">Thêm</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="slider">
+
+    </div>
+
+    <main>
+        <div class="san-pham-noi-bat" id="san-pham-noi-bat">
+            <div class="item">
+                <div class="anh-san-pham">
+                    <img src="https://www.imore.com/sites/imore.com/files/field/image/2014/03/topic_iphone_5.png"
+                        alt="">
+                </div>
+                <div class="thong-tin-san-pham">
+                    <div class="ten-san-pham">
+                        <span>Iphone 5</span>
+                    </div>
+                    <div class="gia-ban">
+                        <span>5.000.000đ</span>
+                    </div>
+                    <div class="gia-truoc-giam">
+                        <span>5.000.000đ</span>
+                    </div>
+                </div>
+                <div class="btn-them-san-pham">
+                    <i class="fas fa-cart-plus" style="color: black;"></i>
+                </div>
+            </div>
+            <div class="item">
+                <div class="anh-san-pham">
+                    <img src="https://www.imore.com/sites/imore.com/files/field/image/2014/03/topic_iphone_5.png"
+                        alt="">
+                </div>
+                <div class="thong-tin-san-pham">
+                    <div class="ten-san-pham">
+                        <span>Iphone 5</span>
+                    </div>
+                    <div class="gia-ban">
+                        <span>5.000.000đ</span>
+                    </div>
+                    <div class="gia-truoc-giam">
+                        <span>5.000.000đ</span>
+                    </div>
+                </div>
+                <div class="btn-them-san-pham">
+                    <i class="fas fa-cart-plus" style="color: black;"></i>
+                </div>
+            </div>
+            <div class="item">
+                <div class="anh-san-pham">
+                    <img src="https://www.imore.com/sites/imore.com/files/field/image/2014/03/topic_iphone_5.png"
+                        alt="">
+                </div>
+                <div class="thong-tin-san-pham">
+                    <div class="ten-san-pham">
+                        <span>Iphone 5</span>
+                    </div>
+                    <div class="gia-ban">
+                        <span>5.000.000đ</span>
+                    </div>
+                    <div class="gia-truoc-giam">
+                        <span>5.000.000đ</span>
+                    </div>
+                </div>
+                <div class="btn-them-san-pham">
+                    <i class="fas fa-cart-plus" style="color: white;"></i>
+                </div>
+            </div>
+            <div class="item">
+                <div class="anh-san-pham">
+                    <img src="https://www.imore.com/sites/imore.com/files/field/image/2014/03/topic_iphone_5.png"
+                        alt="">
+                </div>
+                <div class="thong-tin-san-pham">
+                    <div class="ten-san-pham">
+                        <span>Iphone 5</span>
+                    </div>
+                    <div class="gia-ban">
+                        <span>5.000.000đ</span>
+                    </div>
+                    <div class="gia-truoc-giam">
+                        <span>5.000.000đ</span>
+                    </div>
+                </div>
+                <div class="btn-them-san-pham">
+                    <i class="fas fa-cart-plus" style="color: white;"></i>
+                </div>
+            </div>
+            <div class="item">
+                <div class="anh-san-pham">
+                    <img src="https://www.imore.com/sites/imore.com/files/field/image/2014/03/topic_iphone_5.png"
+                        alt="">
+                </div>
+                <div class="thong-tin-san-pham">
+                    <div class="ten-san-pham">
+                        <span>Iphone 5</span>
+                    </div>
+                    <div class="gia-ban">
+                        <span>5.000.000đ</span>
+                    </div>
+                    <div class="gia-truoc-giam">
+                        <span>5.000.000đ</span>
+                    </div>
+                </div>
+                <div class="btn-them-san-pham">
+                    <i class="fas fa-cart-plus"></i>
+                </div>
+            </div>
+            <div class="item">
+                <div class="anh-san-pham">
+                    <img src="https://www.imore.com/sites/imore.com/files/field/image/2014/03/topic_iphone_5.png"
+                        alt="">
+                </div>
+                <div class="thong-tin-san-pham">
+                    <div class="ten-san-pham">
+                        <span>Iphone 5</span>
+                    </div>
+                    <div class="gia-ban">
+                        <span>5.000.000đ</span>
+                    </div>
+                    <div class="gia-truoc-giam">
+                        <span>5.000.000đ</span>
+                    </div>
+                </div>
+                <div class="btn-them-san-pham">
+                    <i class="fas fa-cart-plus" style="color: white;"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="san-pham-khuyen-mai">
+
+        </div>
+
+        <div class="san-pham-dien-thoai">
+
+        </div>
+
+        <div class="san-pham-laptop">
+
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+<script src="javascript.js"></script>
+<script>
+    hienThiSanPham();
+    function hienThiSanPham() {
+        let nodeHienThi = document.getElementById('san-pham-noi-bat');
+        nodeHienThi.innerHTML = HTMLDanhSachSanPham();
+    }
+
+    document.getElementById("btn-them-san-pham").addEventListener("click", function () {
+        checkInputThemSanPham();
+    });
+
+    function themSanPham(sanPham) {
+        var danhSach = danhSachSanPham();
+        console.log(danhSach);
+        danhSach.unshift(sanPham);
+        localStorage.setItem(keyLocalSanPhamMoi, JSON.stringify(danhSach));
+    }
+
+
+    function checkInputThemSanPham() {
+        var check = true;
+        let nodeInput = document.querySelectorAll('.form-input-san-pham input[required]');
+
+
+        let nodeHienThiLoi = document.getElementsByClassName('hien-thi-loi')
+
+
+        for (let i = 0; i < nodeInput.length; i++) {
+            if (nodeInput[i].value == '') {
+                check = false;
+                if (nodeInput[i].id == 'hinhAnh') {
+                    var tenLoi = 'Hình ảnh';
+                }
+                if (nodeInput[i].id == 'tenSanPham') {
+                    var tenLoi = 'Tên sản phẩm';
+                }
+                if (nodeInput[i].id == 'giaGoc') {
+                    var tenLoi = 'Giá gốc sản phẩm';
+                }
+                if (nodeInput[i].id == 'phanTramGiamGia') {
+                    var tenLoi = 'Phần trăm giảm giá';
+                }
+
+                nodeHienThiLoi[i].innerHTML = tenLoi + ' không được bỏ trống!';
+            } else {
+                if (nodeInput[i].id == 'hinhAnh') {
+                    nodeHienThiLoi[i].innerHTML = '';
+                    var hinhAnh = nodeInput[i].value;
+                }
+                if (nodeInput[i].id == 'tenSanPham') {
+                    nodeHienThiLoi[i].innerHTML = '';
+                    var tenSanPham = nodeInput[i].value;
+                }
+                if (nodeInput[i].id == 'giaGoc') {
+                    if (nodeInput[i].value < 0) {
+                        check = false;
+                        nodeHienThiLoi[i].innerHTML = 'Giá gốc không thể âm!';
+
+                    } else {
+                        var giaGoc = nodeInput[i].value;
+                    }
+                }
+                if (nodeInput[i].id == 'phanTramGiamGia') {
+                    if (nodeInput[i].value < 0 || nodeInput[i].value > 100) {
+                        check = false;
+                        nodeHienThiLoi[i].innerHTML = 'Vui lòng nhập trong khoảng từ 0 - 100';
+
+                    } else {
+                        var phanTramGiamGia = nodeInput[i].value;
+                    }
+                }
+            }
+
+        }
+
+        console.log(nodeInput);
+        if (check!=false) {
+        let sanpham = sanPham(hinhAnh, tenSanPham, giaGoc, phanTramGiamGia);
+        console.log('sanpham');
+        console.log(sanpham);
+        themSanPham(sanpham);
+    }
+    }
+
+    var modal = document.getElementById('modal');
+
+console.log(modal)
+   
+
+
+</script>
+
+</html>

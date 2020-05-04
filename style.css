@@ -1,0 +1,356 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header {
+    height: 100px;
+    background-color: rgba(255, 66, 8, 0.931);
+}
+
+.slider {
+    margin: 0 auto;
+    width: 1200px;
+    height: 300px;
+    background-color: #ddd;
+    margin-top: 50px;
+}
+
+main {
+    margin: 0 auto;
+    width: 1200px;
+    min-height: 500px;
+    /* background-color: green; */
+    margin-top: 50px;
+}
+
+footer {
+    height: 150px;
+    background-color: black;
+    margin-top: 50px;
+
+}
+
+.san-pham-noi-bat, .san-pham-khuyen-mai {
+    
+    height: 400px;
+    /* background-color: green; */
+}
+.san-pham-khuyen-mai{
+    margin-top: 50px;
+}
+
+.san-pham-noi-bat .item {
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    width: 225px;
+    max-height: 330px;
+    padding: 15px;
+    box-shadow: 2px 2px 4px #ddd;
+    position: relative;
+}
+
+.san-pham-noi-bat .item .anh-san-pham {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+.san-pham-noi-bat .item .anh-san-pham img {
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.san-pham-noi-bat .item .thong-tin-san-pham {
+ 
+    padding-top: 20px;
+    width: 140px;
+    height: fit-content;
+
+    display: block;
+}
+
+
+
+.san-pham-noi-bat .btn-them-san-pham {
+    display: block;
+  
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    cursor: pointer;
+}
+
+.san-pham-noi-bat .item:hover {
+
+    transform: translateY(-4px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.san-pham-noi-bat {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 18px;
+    
+}
+
+nav {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+menu {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+menu ul li {
+    float: left;
+    padding: 10px;
+    list-style: none;
+}
+
+.form-input-san-pham label, 
+.form-input-san-pham label input {
+    width: 100%;
+}
+
+.form-input-san-pham label {
+    font-size: 16px;
+    font-weight: bold;
+  
+}
+
+.form-input-san-pham input {
+    padding: 7px 10px;
+    width: 100%;
+
+  
+    margin-bottom: 15px;
+}
+
+.modal-content {
+    padding: 10px 10px;
+}
+
+main#gio-hang {
+    width: 1200px;
+    height: fit-content;
+}
+
+.clear-fix:after {
+    content:"";
+    display:table;
+    clear:both;
+  }
+
+main#gio-hang .danh-sach-gio-hang {
+    width: 768px;
+    min-height: 500px;
+    float: left;
+    
+    /* background-color: turquoise; */
+}
+
+
+main#gio-hang .thanh-toan {
+    box-sizing: border-box;
+    width: 388px;
+    min-height: 500px;
+    float: right;
+    background-color: #ddd;
+    padding: 30px;
+}
+
+main#gio-hang .danh-sach-gio-hang .item-gio-hang{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px 40px 20px 30px;
+    width: 100%;
+    height: 110px;
+    /* background-color: tomato; */
+}
+
+.danh-sach-gio-hang .item-gio-hang .anh-san-pham {
+   box-sizing: border-box;
+    width: 75px;
+    height: 75px;
+    border-radius: 4px;
+    border: 2px solid #ddd;
+    padding: 5px;
+    
+}
+
+.danh-sach-gio-hang .item-gio-hang .anh-san-pham img {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.danh-sach-gio-hang .item-gio-hang {
+    border-bottom: 2px solid #ddd;
+}
+
+.danh-sach-gio-hang:first-child{
+    border-top: 2px solid #ddd;
+}
+
+.danh-sach-gio-hang .item-gio-hang input{
+    box-sizing: border-box;
+    width: 35px;
+    height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    border: 2px solid #ddd;
+}
+
+.danh-sach-gio-hang .item-gio-hang input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.thanh-tien .danh-muc-thanh-toan {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-gio-hang .so-luong  i{
+    width: 20px;
+    height: 20px;
+    padding: 3px 0px;
+    cursor: pointer;
+    /* background-color: red; */
+    text-align: center;
+   color: rgb(148, 148, 148);
+
+    
+    
+}
+
+.xoa-item-gio-hang {
+    cursor: pointer;
+}
+
+.header-top{
+    width: 100%;
+    height: 40px;
+    background: #000;
+}
+
+.header-top .container {
+    width: 1200px;
+    margin: 0 auto;
+      
+}
+
+.login-signup-label {
+    float: right;
+}
+
+.login-signup-label ul li{
+    float: left;
+    list-style: none;
+    height: 40px;
+    width: 100px;
+    box-sizing: border-box;
+   
+    
+}
+.login-signup-label ul li a{
+    text-decoration: none;
+    color: white;
+    height: 40px;
+
+    padding: 10px;
+    display: block;
+  
+}
+
+/* modal */
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.modal .form {
+    box-sizing: border-box;
+    width: 500px;
+    background-color: #fff;
+    padding: 40px;
+    margin: 10% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    position: relative;
+}
+
+.form label,
+.form input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0px;
+
+}
+
+.form label {
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.form input {
+    padding: 7px 10px;
+    margin-bottom: 15px;
+}
+
+
+.form button {
+    width: 100%;
+    padding: 10px 10px;
+    background-color: rgb(76, 175, 80);
+    border: none;
+    color: white;
+}
+
+.form .header span#close {
+    position: absolute;
+    right: 8%;
+    top: 5%;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-backdrop{
+ z-index: 0;
+}
+
+
+
+
+
+
+
+
+
+
+

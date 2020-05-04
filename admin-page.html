@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-admin-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Trang chủ</a></li>
+                <li><a href="cart.html">Thanh toán</a></li>
+
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="container-fluid">
+
+
+        <div class="aside">
+            <ul>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+
+            </ul>
+        </div>
+
+        <div class="main-contain">
+            <h3>Sản phẩm</h3>
+            <div id="danh-sach-san-pham">
+
+            </div>
+
+            <div class="modal" id="modal">
+                <div class="form">
+                    <div class="header">
+                        <h1>Sửa sản phẩm</h1>
+                        <span onclick="closeModal()" id="close">&times;</span>
+                    </div>
+                    <div class="main-content">
+                        <div class="form-input-san-pham">
+                            <label for="hinhAnh">Hình ảnh sản phẩm</label>
+                            <input required type="text" class="form-control" id="hinhAnh">
+                            <div class="hien-thi-loi">
+                                <p>abc</p>
+                            </div>
+
+                            <label for="tenSanPham">Tên sản phẩm</label>
+                            <input required type="text" class="form-control" id="tenSanPham">
+                            <div class="hien-thi-loi">
+                                <p>abc</p>
+                            </div>
+
+                            <label for="giaGoc">Giá gốc sản phẩm</label>
+                            <input required type="number" class="form-control" id="giaGoc">
+                            <div class="hien-thi-loi">
+                                <p>abc</p>
+                            </div>
+
+                            <label for="phanTramGiamGia">Phần trăm giảm giá (0-100)</label>
+                            <input required type="number" class="form-control" id="phanTramGiamGia">
+                            <div class="hien-thi-loi">
+                                <p>abc</p>
+                            </div>
+
+                            <label for="loaiSanPham" style="width: fit-content;">Loại sản phẩm</label>
+                            <select class="btn btn-primary" id="loaiSanPham">
+                                <option value="dienThoai">Điện thoại</option>
+                                <option value="laptop">Laptop</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="container-btn">
+                        <button type="button" class="btn btn-success" id="btn-them-san-pham" >Lưu</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="closeModal()">Close</button>
+                    </div>
+                    <div class="hien-thi-loi">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+<script src="javascript.js"></script>
+<script>
+
+    hienThiSanPham();
+    function hienThiSanPham() {
+        let nodeHienThi = document.getElementById('danh-sach-san-pham');
+        nodeHienThi.innerHTML = HTMLDanhSachSanPham();
+    }
+
+    function HTMLSanPham(sanPham) {
+        let HTML = '';
+        HTML = '   <div class="item">  ' +
+            '                   <div class="anh-san-pham">  ' +
+            '                       <img src="' + sanPham.hinhAnh + '"  ' +
+            '                           alt="">  ' +
+            '                   </div>  ' +
+            '                   <div class="thong-tin-san-pham">  ' +
+            '                       <div class="ten-san-pham">  ' +
+            '                           <span>' + sanPham.tenSanPham + '</span>' +
+            '                       </div>  ' +
+            '                       <div class="gia-ban">  ' +
+            '                           <span>' + sanPham.giaBan() + '</span>  ' +
+            '                       </div>  ' +
+            '                       <div class="gia-truoc-giam">  ' +
+            '                           <span>' + sanPham.giaGoc + '</span>  ' +
+            '                       </div>  ' +
+            '                       <div class="phan-tram-giam-gia">  ' +
+            '                           <span>' + sanPham.phanTramGiamGia + '</span>  ' +
+            '                       </div>  ' +
+            '                   </div>  ' +
+
+            '                       <i onclick="suaSanPham(event,' + sanPham.id + ')" class="fas fa-cog btn-them-san-pham"></i>  ' +
+
+  
+            '              </div>  ';
+        return HTML;
+    }
+
+    function suaSanPham(event, idSanPham) {
+        var nodeModal = document.getElementById('modal');
+        nodeModal.style.display = 'block';
+        var nodeCha = event.target.parentElement;
+
+        var hinhAnh = nodeCha.querySelector('.anh-san-pham img').getAttribute('src');
+        var tenSanPham = nodeCha.querySelector('.thong-tin-san-pham .ten-san-pham span').innerText;
+        var giaGoc = nodeCha.querySelector('.thong-tin-san-pham .gia-truoc-giam span').innerText;
+        var phanTramGiamGia = nodeCha.querySelector('.thong-tin-san-pham .phan-tram-giam-gia span').innerText;
+        
+        var nodeThayDoiHinhAnh = document.querySelector('#hinhAnh').setAttribute('value', hinhAnh);
+        var nodeThayDoiHinhAnh = document.querySelector('#tenSanPham').setAttribute('value', tenSanPham);
+        var nodeThayDoiHinhAnh = document.querySelector('#giaGoc').setAttribute('value', giaGoc);
+        var nodeThayDoiHinhAnh = document.querySelector('#phanTramGiamGia').setAttribute('value', phanTramGiamGia);
+        var nodeLuuSanPham = document.querySelector('#btn-them-san-pham').setAttribute('onClick', 'luuSanPham('+idSanPham+')');
+    }
+
+    function luuSanPham(idSanPham){
+        var nodeModalSuaSanPham = document.getElementById('modal');
+        var hinhAnh = nodeModalSuaSanPham.querySelector('#hinhAnh').value;
+        var tenSanPham = nodeModalSuaSanPham.querySelector('#tenSanPham').value;
+        var giaGoc = nodeModalSuaSanPham.querySelector('#giaGoc').value;
+        var phanTramGiamGia = nodeModalSuaSanPham.querySelector('#phanTramGiamGia').value;
+        
+        var danhSach = danhSachSanPham();
+        for (var sanpham of danhSach){
+            if (sanpham.id == idSanPham){
+                sanpham.hinhAnh = hinhAnh;
+                sanpham.tenSanPham = tenSanPham;
+                sanpham.giaGoc = giaGoc;
+                sanpham.phanTramGiamGia = phanTramGiamGia;
+                break;
+            }
+        }
+        localStorage.setItem(keyLocalSanPhamMoi, JSON.stringify(danhSach));
+        closeModal();
+        hienThiSanPham();
+    }
+
+ 
+
+</script>
+
+</html>
