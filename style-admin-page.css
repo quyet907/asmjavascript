@@ -55,29 +55,36 @@ nav ul li a:hover {
 }
 
 .aside ul {
-    margin-top: 20px;
-
-}
-
-.aside ul li {
- text-align: center;
-    
+    margin-top: 40px;
     width: 100%;
-    height: 15px;
-   
-    list-style: none;
-    background-color: #222d32;
+    height: fit-content;
+    
 }
 
-.aside ul li a {
-    height: 15px;
- 
+.aside ul> li:first-child{
+    border-top: 1px solid white;
+}
+
+.aside ul> li {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    
+    border-bottom: 1px solid white;
+}
+
+.aside ul> li>a {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
     text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-    color: #fff;
-
+    color: white;
+    font-weight: 600;
 }
+
+
+
 
 .main-contain {
 
@@ -131,16 +138,32 @@ nav ul li a:hover {
 
 #danh-sach-san-pham .btn-them-san-pham {
     display: block;
-  
-    padding: 8px 10px;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    padding: 7px;
     border: 1px solid #ddd;
     border-radius: 3px;
     position: absolute;
-    right: 20px;
+    right: 40px;
     bottom: 30px;
     cursor: pointer;
 }
 
+#danh-sach-san-pham .btn-xoa-san-pham {
+    display: block;
+  
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    padding: 7px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    position: absolute;
+    right: 10px;
+    bottom: 30px;
+    cursor: pointer;
+}
 #danh-sach-san-pham .item:hover {
 
     transform: translateY(-4px);
@@ -221,17 +244,22 @@ nav ul li a:hover {
     padding: 7px 10px;
     margin-bottom: 15px;
 }
+.container-btn {
+   text-align: right;
+   margin-top: 20px;
+}
+
 
 
 .form button {
-    width: 100%;
+    width: 100px;
     padding: 10px 10px;
     background-color: rgb(76, 175, 80);
     border: none;
     color: white;
 }
 
-.form .header span#close {
+.form .header span#close, #close-x {
     position: absolute;
     right: 8%;
     top: 5%;
@@ -243,4 +271,8 @@ nav ul li a:hover {
 
 .modal-backdrop{
  z-index: 0;
+}
+
+#modal-xoa-san-pham {
+    display: none;
 }

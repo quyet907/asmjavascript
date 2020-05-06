@@ -8,24 +8,346 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
         integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
-    <script src="javascript.js"></script>
+
 </head>
+<style>
+    
+
+    #header-top {
+        width: 100%;
+        height: 40px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    #header-top .main {
+        width: 1200px;
+        height: 40px;
+        margin: 0 auto;
+
+    }
+
+    #header-top .main .thong-tin-lien-he {
+        width: fit-content;
+        display: flex;
+        padding: 10px;
+        float: left;
+    }
+
+    #header-top .main .thong-tin-lien-he .phan-cach {
+        border-right: 1px solid black;
+        height: 20px;
+    }
+
+    #header-top .login-sign-up {
+        width: fit-content;
+        float: right;
+    }
+
+    #header-top .main .thong-tin-lien-he span {
+        padding: 0px 15px;
+    }
+
+    #header-top .login-sign-up ul li {
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+
+        text-align: center;
+    }
+
+    #header-top .login-sign-up ul li a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+
+    }
+
+    #header-mid {
+        width: 100%;
+        height: 120px;
+        margin-bottom: 0 !important;
+    }
+
+    #header-mid .main {
+
+        box-sizing: border-box;
+        width: 1200px;
+        height: 100px;
+        margin: 0 auto;
+
+        clear: both;
+        padding: 20px 0px;
+
+
+    }
+
+    #header-mid .main .logo {
+        width: 19%;
+        height: 100%;
+        float: left;
+
+    }
+
+    #header-mid .main .logo img {
+        height: 60px;
+        margin-left: 20px;
+    }
+
+    #header-mid .main .tim-kiem {
+        width: 65%;
+        height: fit-content;
+        float: left;
+        /* background-color: green; */
+        display: flex;
+        margin-top: 10px;
+    }
+
+    #header-mid .main .gio-hang {
+        width: 15%;
+        height: 100%;
+        float: left;
+
+    }
+
+    #header-mid .main .tim-kiem input {
+        font-size: 19px;
+        width: 630px;
+        height: 20px !important;
+        padding: 10px 20px;
+        border: 1px solid #ddd;
+        outline: none;
+    }
+
+    #header-mid .main .tim-kiem button {
+        outline: none;
+        width: 45px;
+        border: 1px solid #ddd;
+        background-color: #f6c248;
+        cursor: pointer;
+
+    }
+
+    #header-mid .main .gio-hang .gio {
+
+        width: 100%;
+        height: 100%;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #header-bot {
+        background-color: black;
+        width: 100%;
+        height: 50px;
+    }
+
+    #header-bot nav {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    #header-bot nav ul {
+        width: fit-content;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    #header-bot nav ul li {
+        list-style: none;
+        width: 140px;
+
+        border-left: 1px solid rgba(221, 221, 221, 0.377);
+        text-align: center;
+    }
+
+    #header-bot nav ul li a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        height: 50px;
+        line-height: 50px;
+        padding: 0px 10px;
+        font-weight: bold;
+
+    }
+
+    #header-bot nav ul li:last-child {
+        border-right: 1px solid rgba(221, 221, 221, 0.377);
+    }
+
+    #header-bot nav ul li:hover {
+        background-color: #e5ad2c;
+    }
+
+    #slider {
+        width: 1600px;
+        height: 700px;
+
+        margin: 0 auto;
+        background-color: cornflowerblue;
+        position: relative;
+
+    }
+
+    #slider .slider-item img {
+        height: 100%;
+    }
+
+    #slider .slider-item {
+        text-align: center;
+        height: 750px;
+        display: none;
+    }
+
+
+
+    .nut-slider span {
+        display: block;
+        padding: 20px 10px;
+        cursor: pointer;
+        font-size: 40px;
+        color: white;
+        opacity: 0.6;
+        cursor: pointer;
+        background-color: crimson;
+    }
+
+
+    #btn-prev {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: 1%;
+        transform: translateY(-50%);
+    }
+
+    #btn-next {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        right: 1%;
+        transform: translateY(-50%);
+    }
+
+
+    .nut-slider i {
+        font-size: 50px;
+    }
+
+   
+
+
+
+ 
+
+
+
+
+
+
+
+
+  
+
+
+
+    /* #nut-next-prev{
+        position: absolute;
+        top: 0;
+    } */
+
+ 
+</style>
 
 <body>
 
-    <header>
+    <div id="header-top">
+        <div class="main">
+            <div class="thong-tin-lien-he">
+                <div class="email">
+                    <span>quyetf4@gmail.com</span>
+                </div>
+                <div class="phan-cach"></div>
+                <div class="sdt">
+                    <span>0909 999 888</span>
+                </div>
+            </div>
+            <div class="login-sign-up" id="login-sign-up">
+                <ul>
+                    <li><a href="#">Đăng kí</a></li>
+
+                    <li style="width:max-content;">|</li>
+                    <li><a href="#" id="btn-dang-nhap" onclick="openModal()">Đăng nhập</a></li>
+                    <div class="modal" id="modal">
+                        <div class="form">
+                            <div class="header">
+                                <h1>Đăng nhập</h1>
+                                <span onclick="closeModal()" id="close">&times;</span>
+                            </div>
+                            <div class="main-content">
+                                <label for="username">Tên đăng nhập</label>
+                                <input type="text" name="" id="username">
+
+
+                                <label for="password">Mật khẩu</label>
+                                <input type="password" id="password">
+                            </div>
+
+                            <div class="container-btn">
+                                <button onclick="checkLogin()">Đăng nhập</button>
+                            </div>
+                            <div class="hien-thi-loi">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div id="header-mid">
+        <div class="main">
+            <div class="logo">
+                <a href="home.html"><img src="dotSTORE.png" alt="logo"></a>
+            </div>
+            <div class="tim-kiem">
+                <input type="text" placeholder="Search..">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="gio-hang">
+                <a style="text-decoration: none; color: black;" href="cart.html">
+                    <div class="gio">
+                        <i style="font-size: 25px;" class="fas fa-shopping-cart"></i>
+                        <span id="so-luong-san-pham" style="font-size: 15px; margin-left: 10px;">12 sản phẩm</span>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div id="header-bot">
         <nav>
-            <menu></menu>
-            <a href="home.html">home</a>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Thanh toán</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Hỗ trợ</a></li>
+            </ul>
         </nav>
-    </header>
+    </div>
 
-    <header>
-        <h3>Thanh toán</h3>
-    </header>
-
-    <main id="gio-hang" class="clear-fix">
-        <div class="danh-sach-gio-hang " id="danh-sach-gio-hang">
+    <main id="gio-hang" class="clearfix" >
+        <div class="danh-sach-gio-hang clearfix" id="danh-sach-gio-hang">
            
             
         </div>
@@ -99,8 +421,10 @@
         <button><i class="fas fa-minus"></i></button>
     </footer>
 </body>
+<script src="javascript.js"></script>
 
 <script>
+    giaoDienDangNhap();
     hienThiGioHang();
     function hienThiGioHang() {
         let nodeHienThi = document.getElementById('danh-sach-gio-hang');
@@ -178,12 +502,13 @@ function hienThiTongTien() {
     var nodeTamTinh = document.querySelector('#gia-tam-tinh');
     var nodeTongTien = document.querySelector('#tong-tien');
     console.log(nodeTamTinh);
-    nodeTamTinh.innerHTML = tongTien();
-    nodeTongTien.innerHTML = tongTien();
+    nodeTamTinh.innerHTML = formatTienTe(tongTien());
+    nodeTongTien.innerHTML = formatTienTe(tongTien());
 
 }
    
 
 </script>
+
 
 </html>

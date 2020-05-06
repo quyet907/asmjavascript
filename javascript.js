@@ -60,10 +60,10 @@ function HTMLSanPham(sanPham) {
         '                           <span>' + sanPham.tenSanPham + '</span>' +
         '                       </div>  ' +
         '                       <div class="gia-ban">  ' +
-        '                           <span>' + sanPham.giaBan() + '</span>  ' +
+        '                           <span>' + formatTienTe(sanPham.giaBan()) + '</span>  ' +
         '                       </div>  ' +
         '                       <div class="gia-truoc-giam">  ' +
-        '                           <span>' + sanPham.giaGoc + '</span>  ' +
+        '                           <span>' + formatTienTe(sanPham.giaGoc) + '</span>  ' +
         '                       </div>  ' +
         '                   </div>  ' +
         '                   <button class="btn-them-san-pham" onclick="themVaoGioHang(' + sanPham.id + ')">  ' +
@@ -95,8 +95,10 @@ function themVaoGioHang(idSanPham) {
         danhSach.unshift(itemMoi);
     }
     localStorage.setItem(keyLocalGioHang, JSON.stringify(danhSach));
-
+    hienTongSoLuong();
 }
+
+
 
 
 
@@ -116,7 +118,7 @@ function chuyenIdThanhSanPhamDayDu(idSanPham) {
         }
     }
 }
-
+console.log('dánhach');
 console.log(danhSachGioHang());
 
 
@@ -202,6 +204,7 @@ function thayDoiSoLuong(event, idSanPham) {
 
     hienThiGioHang();
     hienThiTongTien();
+    hienTongSoLuong();
 }
 
 
@@ -214,6 +217,7 @@ function xoaItemGioHang(idSanPham) {
             localStorage.setItem(keyLocalGioHang, JSON.stringify(danhSach));
             hienThiGioHang();
             hienThiTongTien();
+            hienTongSoLuong();
             break;
         }
     }
@@ -275,7 +279,7 @@ function checkLogin() {
                 check = true;
                 closeModal();
                 var userDaLogin = userDaDangNhap(danhSach[i].taiKhoan, 'true');
-      
+
                 // danhSachUserr
                 localStorage.setItem('trangThaiDangNhap', JSON.stringify(userDaLogin));
                 giaoDienKhiDangNhapThanhCong(danhSach[i].taiKhoan);
@@ -288,26 +292,27 @@ function checkLogin() {
     }
 }
 
-giaoDienDangNhap();
+
 
 function giaoDienDangNhap() {
     var taiKhoanDaDangNhapJSON = localStorage.getItem('trangThaiDangNhap');
-     var taiKhoanDaDangNhap = JSON.parse(taiKhoanDaDangNhapJSON);
+    var taiKhoanDaDangNhap = JSON.parse(taiKhoanDaDangNhapJSON);
     if (taiKhoanDaDangNhapJSON != null && taiKhoanDaDangNhapJSON != '') {
         giaoDienKhiDangNhapThanhCong(taiKhoanDaDangNhap.username);
-    }   
+    }
 }
 
 
 function giaoDienKhiDangNhapThanhCong(tenUser) {
-    var nodeButtonDangNhap = document.querySelector('.login-signup-label');
+    var nodeButtonDangNhap = document.getElementById('login-sign-up');
     console.log(nodeButtonDangNhap);
     nodeButtonDangNhap.innerHTML =
-        '     <ul>  ' +
+        '    <ul>  ' +
         '    <li><a href="admin-page.html"><i class="fas fa-cog"></i></a></li>   ' +
-        '         <li><a href="#"><i class="fas fa-user-cog">  </i>' + tenUser + '</a></li>  ' +
-        '         <li><a href="#" onclick="dangXuat()">Đăng xuất</a></li>  ' +
-        '     </ul>  ';
+        '                       <li><a href="#"><i class="fas fa-user-cog">  </i>' + tenUser + '</a></li>  ' +
+        '                       <li style="width:max-content;">|</li>  ' +
+        '                       <li><a href="#" onclick="dangXuat()">Đăng xuất</a></li>  ' +
+        '  </ul>  ';
 }
 
 
@@ -317,11 +322,11 @@ function dangXuat() {
     location.reload();
 }
 
-function openModal() {
+function openModal(modal) {
     modal.style.display = 'block';
 }
 
-function closeModal() {
+function closeModal(modal) {
     modal.style.display = 'none';
 }
 
@@ -331,5 +336,27 @@ window.onclick = function (event) {
     }
 }
 
+var modal = document.getElementById('modal');
+
+hienTongSoLuong();
+
+function hienTongSoLuong(){
+    var nodeTongSoSanPham = document.getElementById('so-luong-san-pham');
+    var soLuong = tongSoSanPham();
+    nodeTongSoSanPham.innerHTML = soLuong + ' sản phẩm';
+}
+function tongSoSanPham() {
+    let danhSachJSON = localStorage.getItem(keyLocalGioHang);
+    let danhSachParse = JSON.parse(danhSachJSON);
+    var soLuong = 0;
+    for ( var sanpham of danhSachParse){
+        soLuong+=sanpham.soLuong;
+    }
+    return soLuong;
+}
 
 
+function formatTienTe(soTien) {
+    var quyDoi = Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(soTien);
+    return quyDoi;
+}
