@@ -277,7 +277,7 @@ function checkLogin() {
             if (danhSach[i].matKhau == matKhauValue && matKhauValue == 'admin') {
                 console.log('Thanh cong');
                 check = true;
-                closeModal();
+                closeModal(modal);
                 var userDaLogin = userDaDangNhap(danhSach[i].taiKhoan, 'true');
 
                 // danhSachUserr
