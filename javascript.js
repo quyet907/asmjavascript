@@ -135,17 +135,23 @@ function HTMLDanhSachSanPham() {
     return HTMLTong;
 }
 
-function layDanhSachSanPhamNoiBat(){
+function layDanhSachSanPhamNoiBat() {
     let danhSach = danhSachSanPham();
     let danhSachSanPhamNoiBat = [];
-    for (var i =0; i<16; i++){
-        danhSachSanPhamNoiBat[i] = danhSach[i];
+    if (danhSach.length >0) {
+      
+        for (var i = 0; i < 16; i++) {
+            danhSachSanPhamNoiBat[i] = danhSach[i];
+        }
     }
     return danhSachSanPhamNoiBat;
 }
+console.log('danhSachSanPham')
+console.log(danhSachSanPham());
+console.log(layDanhSachSanPhamNoiBat())
 
 function chuyenDanhSachThanhHTML(danhSach) {
-    
+
     let HTMLTong = '';
     for (var i = 0; i < danhSach.length; i++) {
         HTMLTong += HTMLSanPham(danhSach[i]);
@@ -153,11 +159,11 @@ function chuyenDanhSachThanhHTML(danhSach) {
     return HTMLTong;
 }
 
-function layDanhSachLaptop(){
+function layDanhSachLaptop() {
     let danhSach = danhSachSanPham();
     let danhSachLaptop = [];
-    for (var i =0; i<danhSach.length; i++){
-        if (danhSach[i].loaiSanPham == 'laptop'){
+    for (var i = 0; i < danhSach.length; i++) {
+        if (danhSach[i].loaiSanPham == 'laptop') {
             danhSachLaptop[i] = danhSach[i];
         }
     }
@@ -165,25 +171,18 @@ function layDanhSachLaptop(){
 }
 
 
-function layDanhSachManHinh(){
+function layDanhSachManHinh() {
     let danhSach = danhSachSanPham();
     let danhSachManHinh = [];
-    for (var i =0; i<danhSach.length; i++){
-        if (danhSach[i].loaiSanPham == 'manHinh'){
+    for (var i = 0; i < danhSach.length; i++) {
+        if (danhSach[i].loaiSanPham == 'manHinh') {
             danhSachManHinh[i] = danhSach[i];
         }
     }
     return danhSachManHinh;
 }
 
-function layDanhSachSanPhamNoiBat() {
-    let danhSach = danhSachSanPham();
-    let danhSachSanPhamNoiBat = [];
-    for (var i =0; i<16; i++){
-        danhSachSanPhamNoiBat[i] = danhSach[i];
-    }
-    return danhSachSanPhamNoiBat;
-}
+
 
 function HTMLItemGioHang(item) {
     let sanPhamDayDu = chuyenIdThanhSanPhamDayDu(item.id);
