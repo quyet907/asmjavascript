@@ -326,7 +326,7 @@ nav ul li a:hover {
     color: white;
 }
 
-.form .header span#close, #close-x {
+.form .header span#close, #close-x, #close-modal-sua {
     position: absolute;
     right: 8%;
     top: 5%;
