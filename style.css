@@ -6,7 +6,7 @@
    
 
 body {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: sans-serif;
 }
 
 #header-top {
@@ -257,17 +257,22 @@ footer {
 
 }
 
-#san-pham-noi-bat {
+#san-pham-noi-bat, #san-pham-dien-thoai, #san-pham-laptop {
     
        
     /* background-color: green; */
     display: flex;
    
-    transition: 0.5s ease-in-out;
+    transition: 0.8s ease-in-out;
+    
+}
+
+.san-pham-noi-bat  {
+    margin-bottom: 100px;
 }
 
 .san-pham-noi-bat .san-pham{
-    height: fit-content;
+    height: 360px;
     padding: 10px 0px;
     width: 1200px;
     overflow: hidden;
@@ -284,15 +289,15 @@ footer {
     margin-right: 18px;
     border: 1px solid #ddd;
     width: 225px;
-    max-height: 330px;
-    padding: 15px;
+    max-height: 360px;
+    padding: 20px;
     box-shadow: 2px 2px 4px #ddd;
     position: relative;
 }
 
 .san-pham-noi-bat .item .anh-san-pham {
     width: 200px;
-    height: 200px;
+    height: 170px;
     text-align: center;
 }
 
@@ -303,34 +308,84 @@ footer {
 }
 
 .san-pham-noi-bat .item .thong-tin-san-pham {
- 
+  
     padding-top: 20px;
-    width: 140px;
+    width: 100%;
     height: fit-content;
 
     display: block;
 }
 
+.san-pham-noi-bat .item .ten-san-pham {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.san-pham-noi-bat .item .ten-san-pham span {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.san-pham-noi-bat .item .gia-ban span, .item-gio-hang .gia-ban {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(250, 67, 35);
+}
+
+.san-pham-noi-bat .item .gia-truoc-giam span, .item-gio-hang .gia-goc {
+    font-size: 12px;
+    text-decoration: line-through;
+    
+}
 
 
 
 
 .san-pham-noi-bat .btn-them-san-pham {
-    display: block;
-  
+    opacity: 0;
+    outline: none;
+    background-color: white;
+    transition: display 1s ease-in;
     padding: 8px 10px;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(250, 67, 35);
     border-radius: 3px;
     position: absolute;
     right: 20px;
-    bottom: 30px;
+    bottom: 25px;
     cursor: pointer;
+}
+
+.phan-tram-giam-gia {
+    width: 40px;
+    height: 36px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    text-align: center;
+    padding-top: 2px;
+    color: #fff;
+    font-weight: bold;
+    background-image: url(images/deal-tag.png);
+    background-repeat: no-repeat;
 }
 
 .san-pham-noi-bat .item:hover {
 
     transform: translateY(-4px);
     transition: transform 0.3s ease-in-out;
+}
+
+.san-pham-noi-bat .item:hover .btn-them-san-pham {
+    opacity: 1;
+    transition: .7s ease-in-out;
 }
 
 
@@ -372,6 +427,18 @@ menu ul li {
   
     margin-bottom: 15px;
 }
+
+.hien-thi-loi {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 15px;
+}
+
+.form .hien-thi-loi p{
+    font-size: 12px !important;
+    color: red;
+}   
 
 .modal-content {
     padding: 10px 10px;
@@ -430,18 +497,26 @@ main#gio-hang .danh-sach-gio-hang .item-gio-hang{
 }
 
 .danh-sach-gio-hang .item-gio-hang .ten-san-pham {
-    text-align: center;
+   
    width: 200px;
-
+   height: 60px;
+   word-wrap: break-word;
+   overflow: hidden;
+   display: -webkit-box;
+   text-overflow: ellipsis;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 3;
+    font-size: 15px;
+    font-weight: 550;
 }
 
 .danh-sach-gio-hang .item-gio-hang .so-luong {
-    text-align: center;
+  
     width: 120px;
 
  }
  .danh-sach-gio-hang .item-gio-hang .gia {
-    text-align: center;
+    
     width: 110px;
 
  }
@@ -474,15 +549,45 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
+.thanh-tien {
+    margin-top: 15px;
+}
+
 .thanh-tien .danh-muc-thanh-toan {
+
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.thanh-tien .danh-muc-thanh-toan span {
+    font-size: 16px;
+    font-weight: 550;
 }
 
 .thanh-toan .form .danh-muc{
     position: relative;
 
 }
+
+.thanh-toan #tong-tien {
+    color: rgb(251, 55, 21);
+    font-size: 20px;
+}
+
+.thanh-toan #xac-nhan-thanh-toan{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 2px;
+    border: none;
+    background-color: rgb(251, 55, 21);
+    font-size: 15px;
+    color: white;
+    font-weight: 550;
+}
+
+
 
 .thanh-toan .form label {
     width: fit-content !important;
@@ -593,6 +698,8 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 7px 10px;
     margin-bottom: 15px;
 }
+
+
 
 
 

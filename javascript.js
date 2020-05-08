@@ -13,10 +13,11 @@ function itemGioHang(id, soLuong) {
     return item;
 }
 
-function sanPham(hinhAnh, tenSanPham, giaGoc, phanTramGiamGia, id) {
+function sanPham(hinhAnh, tenSanPham, giaGoc, phanTramGiamGia, loaiSanPham, id) {
     let sanPham = new Object();
     if (id == null || id == '') sanPham.id = taoId();
     else sanPham.id = id;
+    sanPham.loaiSanPham = loaiSanPham;
     sanPham.hinhAnh = hinhAnh;
     sanPham.tenSanPham = tenSanPham;
     sanPham.giaGoc = giaGoc;
@@ -39,7 +40,7 @@ function danhSachSanPham() {
     var danhSachParse = JSON.parse(danhSachJSON);
     var danhSachDayDu = new Array();
     for (var sanpham of danhSachParse) {
-        sanpham = sanPham(sanpham.hinhAnh, sanpham.tenSanPham, sanpham.giaGoc, sanpham.phanTramGiamGia, sanpham.id);
+        sanpham = sanPham(sanpham.hinhAnh, sanpham.tenSanPham, sanpham.giaGoc, sanpham.phanTramGiamGia, sanpham.loaiSanPham, sanpham.id);
 
         danhSachDayDu.push(sanpham);
 
@@ -65,9 +66,12 @@ function HTMLSanPham(sanPham) {
         '                       <div class="gia-truoc-giam">  ' +
         '                           <span>' + formatTienTe(sanPham.giaGoc) + '</span>  ' +
         '                       </div>  ' +
+
+        '                           <span class="phan-tram-giam-gia">-' + sanPham.phanTramGiamGia + '%</span>  ' +
+
         '                   </div>  ' +
         '                   <button class="btn-them-san-pham" onclick="themVaoGioHang(' + sanPham.id + ')">  ' +
-        '                       <i class="fas fa-cart-plus"  style="color: black; "></i>  ' +
+        '                       <i class="fas fa-cart-plus"  style="color: rgb(250, 67, 35); "></i>  ' +
 
         '                   </button>  ' +
         '              </div>  ';
@@ -98,8 +102,8 @@ function themVaoGioHang(idSanPham) {
     hienTongSoLuong();
 }
 
-
-
+console.log('typeof(danhSachGioHang())');
+console.log(typeof (danhSachGioHang()));
 
 
 function danhSachGioHang() {
@@ -113,7 +117,7 @@ function chuyenIdThanhSanPhamDayDu(idSanPham) {
     let danhSachToanBoSanPham = danhSachSanPham();
     for (var sanpham of danhSachToanBoSanPham) {
         if (sanpham.id == idSanPham) {
-            sanpham = sanPham(sanpham.hinhAnh, sanpham.tenSanPham, sanpham.giaGoc, sanpham.phanTramGiamGia, sanpham.id);
+            sanpham = sanPham(sanpham.hinhAnh, sanpham.tenSanPham, sanpham.giaGoc, sanpham.phanTramGiamGia, sanpham.loaiSanPham, sanpham.id);
             return sanpham;
         }
     }
@@ -129,6 +133,56 @@ function HTMLDanhSachSanPham() {
         HTMLTong += HTMLSanPham(sanPham);
     }
     return HTMLTong;
+}
+
+function layDanhSachSanPhamNoiBat(){
+    let danhSach = danhSachSanPham();
+    let danhSachSanPhamNoiBat = [];
+    for (var i =0; i<16; i++){
+        danhSachSanPhamNoiBat[i] = danhSach[i];
+    }
+    return danhSachSanPhamNoiBat;
+}
+
+function chuyenDanhSachThanhHTML(danhSach) {
+    
+    let HTMLTong = '';
+    for (var i = 0; i < danhSach.length; i++) {
+        HTMLTong += HTMLSanPham(danhSach[i]);
+    }
+    return HTMLTong;
+}
+
+function layDanhSachLaptop(){
+    let danhSach = danhSachSanPham();
+    let danhSachLaptop = [];
+    for (var i =0; i<danhSach.length; i++){
+        if (danhSach[i].loaiSanPham == 'laptop'){
+            danhSachLaptop[i] = danhSach[i];
+        }
+    }
+    return danhSachLaptop;
+}
+
+
+function layDanhSachManHinh(){
+    let danhSach = danhSachSanPham();
+    let danhSachManHinh = [];
+    for (var i =0; i<danhSach.length; i++){
+        if (danhSach[i].loaiSanPham == 'manHinh'){
+            danhSachManHinh[i] = danhSach[i];
+        }
+    }
+    return danhSachManHinh;
+}
+
+function layDanhSachSanPhamNoiBat() {
+    let danhSach = danhSachSanPham();
+    let danhSachSanPhamNoiBat = [];
+    for (var i =0; i<16; i++){
+        danhSachSanPhamNoiBat[i] = danhSach[i];
+    }
+    return danhSachSanPhamNoiBat;
 }
 
 function HTMLItemGioHang(item) {
@@ -149,11 +203,12 @@ function HTMLItemGioHang(item) {
         '                   </div>  ' +
         '                   <div class="gia">  ' +
         '                       <div class="gia-ban">  ' +
-        '                           <span>' + sanPhamDayDu.giaBan() + '</span>  ' +
+        '                           <span>' + formatTienTe(sanPhamDayDu.giaBan()) + '</span>  ' +
         '                       </div>  ' +
         '                       <div class="gia-goc">  ' +
-        '                           <span>' + sanPhamDayDu.giaGoc + '</span>  ' +
+        '                           <span>' + formatTienTe(sanPhamDayDu.giaGoc) + '</span>  ' +
         '                       </div>  ' +
+
         '                   </div>  ' +
         '                   <div class="xoa-item-gio-hang" onclick="xoaItemGioHang(' + item.id + ')">  ' +
         '                       <i class="fas fa-times"></i>  ' +
@@ -338,19 +393,21 @@ window.onclick = function (event) {
 
 var modal = document.getElementById('modal');
 
-hienTongSoLuong();
 
-function hienTongSoLuong(){
+
+function hienTongSoLuong() {
     var nodeTongSoSanPham = document.getElementById('so-luong-san-pham');
     var soLuong = tongSoSanPham();
+
     nodeTongSoSanPham.innerHTML = soLuong + ' sản phẩm';
 }
 function tongSoSanPham() {
     let danhSachJSON = localStorage.getItem(keyLocalGioHang);
     let danhSachParse = JSON.parse(danhSachJSON);
+    if (danhSachParse == null || danhSachParse == '') return 0;
     var soLuong = 0;
-    for ( var sanpham of danhSachParse){
-        soLuong+=sanpham.soLuong;
+    for (var sanpham of danhSachParse) {
+        soLuong += sanpham.soLuong;
     }
     return soLuong;
 }

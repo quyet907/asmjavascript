@@ -49,30 +49,30 @@
                         <label for="hinhAnh">Hình ảnh sản phẩm</label>
                         <input required type="text" class="form-control" id="hinhAnh">
                         <div class="hien-thi-loi">
-                            <p>abc</p>
+                            <p></p>
                         </div>
 
                         <label for="tenSanPham">Tên sản phẩm</label>
                         <input required type="text" class="form-control" id="tenSanPham">
                         <div class="hien-thi-loi">
-                            <p>abc</p>
+                            <p></p>
                         </div>
 
                         <label for="giaGoc">Giá gốc sản phẩm</label>
                         <input required type="number" class="form-control" id="giaGoc">
                         <div class="hien-thi-loi">
-                            <p>abc</p>
+                            <p></p>
                         </div>
 
                         <label for="phanTramGiamGia">Phần trăm giảm giá (0-100)</label>
                         <input required type="number" class="form-control" id="phanTramGiamGia">
                         <div class="hien-thi-loi">
-                            <p>abc</p>
+                            <p></p>
                         </div>
 
                         <label for="loaiSanPham" style="width: fit-content;">Loại sản phẩm</label>
                         <select class="btn btn-primary" id="loaiSanPham">
-                            <option value="dienThoai">Điện thoại</option>
+                            <option value="manHinh" selected>Màn hình</option>
                             <option value="laptop">Laptop</option>
                         </select>
                     </div>
@@ -93,42 +93,45 @@
 
             <div class="modal" id="modal">
                 <div class="form">
+                    
                     <div class="header">
                         <h1>Sửa sản phẩm</h1>
-                        <span onclick="closeModal(modal)" id="close">&times;</span>
+                        <span onclick="closeModal(modal)" id="close-modal-sua">&times;</span>
                     </div>
                     <div class="main-content">
                         <div class="form-input-san-pham">
                             <label for="hinhAnh">Hình ảnh sản phẩm</label>
                             <input required type="text" class="form-control" id="hinhAnh-re">
                             <div class="hien-thi-loi">
-                                <p>abc</p>
+                                <p></p>
                             </div>
 
                             <label for="tenSanPham">Tên sản phẩm</label>
                             <input required type="text" class="form-control" id="tenSanPham-re">
                             <div class="hien-thi-loi">
-                                <p>abc</p>
+                                <p></p>
                             </div>
 
                             <label for="giaGoc">Giá gốc sản phẩm</label>
                             <input required type="number" class="form-control" id="giaGoc-re">
                             <div class="hien-thi-loi">
-                                <p>abc</p>
+                                <p></p>
                             </div>
 
                             <label for="phanTramGiamGia">Phần trăm giảm giá (0-100)</label>
                             <input required type="number" class="form-control" id="phanTramGiamGia-re">
                             <div class="hien-thi-loi">
-                                <p>abc</p>
+                                <p></p>
                             </div>
 
                             <label for="loaiSanPham" style="width: fit-content;">Loại sản phẩm</label>
-                            <select class="btn btn-primary" id="loaiSanPham-re">
-                                <option value="dienThoai">Điện thoại</option>
+
+                     
+                            <select id="loaiSanPham-re">
+                                <option value="manHinh">Màn hình</option>
                                 <option value="laptop">Laptop</option>
                             </select>
-
+                   
                         </div>
                     </div>
 
@@ -137,9 +140,7 @@
                         <button type="button" class="btn btn-danger" data-dismiss="modal"
                             onclick="closeModal(modal)">Close</button>
                     </div>
-                    <div class="hien-thi-loi">
-                        <p></p>
-                    </div>
+             
                 </div>
             </div>
 
@@ -176,8 +177,9 @@
 <script>
     
 
+
     document.getElementById("btn-them-san-pham").addEventListener("click", function () {
-        checkInputThemSanPham();
+        checkInputThemSanPham(event);
     });
     function themSanPham(sanPham) {
         var danhSach = danhSachSanPham();
@@ -187,11 +189,14 @@
     }
 
 
-    function checkInputThemSanPham() {
+    function checkInputThemSanPham(event) {
+
         var check = true;
+
+        var nodeLoaiSanPham = document.getElementById('loaiSanPham');
         let nodeInput = document.querySelectorAll('#modal-them-san-pham input[required]');
 
-        let nodeHienThiLoi = document.getElementsByClassName('hien-thi-loi')
+        let nodeHienThiLoi = document.querySelectorAll('.hien-thi-loi p')
 
 
         for (let i = 0; i < nodeInput.length; i++) {
@@ -242,9 +247,12 @@
 
         }
 
+        var loaiSanPham = nodeLoaiSanPham.value;
+        console.log(loaiSanPham);
+
         console.log(nodeInput);
         if (check != false) {
-            let sanpham = sanPham(hinhAnh, tenSanPham, giaGoc, phanTramGiamGia);
+            let sanpham = sanPham(hinhAnh, tenSanPham, giaGoc, phanTramGiamGia, loaiSanPham);
             console.log('sanpham');
             console.log(sanpham);
             themSanPham(sanpham);
@@ -274,7 +282,7 @@
             '                           <span>' + sanPham.tenSanPham + '</span>' +
             '                       </div>  ' +
             '                       <div class="gia-ban">  ' +
-            '                           <span>' + sanPham.giaBan() + '</span>  ' +
+            '                           <span>' + formatTienTe(sanPham.giaBan()) + '</span>  ' +
             '                       </div>  ' +
             '                       <div class="gia-truoc-giam">  ' +
             '                           <span>' + sanPham.giaGoc + '</span>  ' +
@@ -303,22 +311,46 @@
         var giaGoc = nodeCha.querySelector('.thong-tin-san-pham .gia-truoc-giam span').innerText;
         var phanTramGiamGia = nodeCha.querySelector('.thong-tin-san-pham .phan-tram-giam-gia span').innerText;
 
+        var danhSach = danhSachSanPham();
+        var loaiSanPhamDefault = 'manHinh';
+        for (var sanPham of danhSach){
+            if (sanPham.id == idSanPham){
+                loaiSanPhamDefault = sanPham.loaiSanPham;
+            }
+        }
+
         var nodeThayDoiHinhAnh = document.querySelector('#hinhAnh-re').setAttribute('value', hinhAnh);
         var nodeThayDoiHinhAnh = document.querySelector('#tenSanPham-re').setAttribute('value', tenSanPham);
         var nodeThayDoiHinhAnh = document.querySelector('#giaGoc-re').setAttribute('value', giaGoc);
         var nodeThayDoiHinhAnh = document.querySelector('#phanTramGiamGia-re').setAttribute('value', phanTramGiamGia);
         var nodeLuuSanPham = document.querySelector('#btn-luu-san-pham').setAttribute('onClick', 'luuSanPham(' + idSanPham + ')');
-
+        var nodeLoaiSanPham = document.querySelectorAll('#loaiSanPham-re option');
+        for (var option of nodeLoaiSanPham){
+            if (option.getAttribute('value')==loaiSanPhamDefault){
+                option.setAttribute('selected', 'true');
+            }
+        }
 
     }
 
     function xoaSanPham(idSanPham) {
         var danhSach = danhSachSanPham();
+        var gioHang = danhSachGioHang();
+        
         for (var i = 0; i < danhSach.length; i++) {
-            if (danhSach[i].id == idSanPham) {
+            if ( danhSach[i].id == idSanPham) {
                 danhSach.splice(i,1);
+                break;
             }
         }
+
+        for (var i = 0; i < gioHang.length; i++) {
+            if ( gioHang[i].id == idSanPham) {
+                gioHang.splice(i,1);
+                break;
+            }
+        }
+        localStorage.setItem(keyLocalGioHang, JSON.stringify(gioHang));
         localStorage.setItem(keyLocalSanPhamMoi, JSON.stringify(danhSach));
         hienThiSanPham();
     }
@@ -329,7 +361,9 @@
         var tenSanPham = nodeModalSuaSanPham.querySelector('#tenSanPham-re').value;
         var giaGoc = nodeModalSuaSanPham.querySelector('#giaGoc-re').value;
         var phanTramGiamGia = nodeModalSuaSanPham.querySelector('#phanTramGiamGia-re').value;
-
+        var loaiSanPham = document.querySelector('#loaiSanPham-re').value;
+        
+        
         var danhSach = danhSachSanPham();
         for (var sanpham of danhSach) {
             if (sanpham.id == idSanPham) {
@@ -337,6 +371,7 @@
                 sanpham.tenSanPham = tenSanPham;
                 sanpham.giaGoc = giaGoc;
                 sanpham.phanTramGiamGia = phanTramGiamGia;
+                sanpham.loaiSanPham = loaiSanPham;
                 break;
             }
         }
@@ -346,22 +381,7 @@
         location.reload();
     }
 
-    // function xoaSanPham(idSanPham) {
-    //     var nodeModal = document.getElementById('modal-xoa-san-pham');
-    //     nodeModal.style.display = 'block';
-    //     var nodeCha = event.target.parentElement;
-
-    //     var hinhAnh = nodeCha.querySelector('.anh-san-pham img').getAttribute('src');
-    //     var tenSanPham = nodeCha.querySelector('.thong-tin-san-pham .ten-san-pham span').innerText;
-    //     var giaGoc = nodeCha.querySelector('.thong-tin-san-pham .gia-truoc-giam span').innerText;
-    //     var phanTramGiamGia = nodeCha.querySelector('.thong-tin-san-pham .phan-tram-giam-gia span').innerText;
-
-    //     var nodeThayDoiHinhAnh = document.querySelector('#hinhAnh').setAttribute('value', hinhAnh);
-    //     var nodeThayDoiHinhAnh = document.querySelector('#tenSanPham').setAttribute('value', tenSanPham);
-    //     var nodeThayDoiHinhAnh = document.querySelector('#giaGoc').setAttribute('value', giaGoc);
-    //     var nodeThayDoiHinhAnh = document.querySelector('#phanTramGiamGia').setAttribute('value', phanTramGiamGia);
-    //     var nodeLuuSanPham = document.querySelector('#btn-them-san-pham').setAttribute('onClick', 'luuSanPham(' + idSanPham + ')');
-    // }
+   
 
 
 

@@ -22,7 +22,7 @@
     }
 
     body {
-        font-family: 'Noto Sans TC', sans-serif;
+        font-family: sans-serif;
     }
 
     #header-top {
@@ -188,6 +188,11 @@
 
     }
 
+    #header-bot nav .active-menu {
+        background-color: #e5ad2c;
+    }
+
+
     #header-bot nav ul li:last-child {
         border-right: 1px solid rgba(221, 221, 221, 0.377);
     }
@@ -266,13 +271,13 @@
         width: 200px;
         margin: 0 auto;
         border-bottom: 3px solid rgb(47, 46, 46);
-        margin-bottom: 20px;
+        margin-bottom: 15px;
 
     }
 
 
 
-    #nut-next-prev span {
+    .nut-next-prev span {
 
         padding: 20px 10px;
         cursor: pointer;
@@ -288,7 +293,7 @@
 
 
 
-    #nut-next-prev i {
+    .nut-next-prev i {
         display: flex;
         font-size: 30px;
         background-color: aqua;
@@ -301,19 +306,19 @@
 
 
 
-    /* #nut-next-prev{
+    /* .nut-next-prev{
         position: absolute;
         top: 0;
     } */
 
-    #btn-prev-sp {
+    .btn-prev-sp {
         position: absolute;
         top: 50%;
         left: -7%;
         transform: translateY(-50%);
     }
 
-    #btn-next-sp {
+    .btn-next-sp {
         position: absolute;
         top: 50%;
         right: -7%;
@@ -322,6 +327,43 @@
 
     .san-pham-noi-bat .main {
         position: relative;
+    }
+
+    .sap-xep {
+        width: 100%;
+        height: 42px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sap-xep ul li {
+        list-style: none;
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+    }
+
+    .sap-xep ul li a {
+        display: block;
+        width: 100px;
+        height: 40px;
+        border: 2px solid #ddd;
+        line-height: 40px;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 14px;
+        font-weight: 550;
+        cursor: pointer;
+    }
+
+    .sap-xep ul li:hover a {
+        border: 2px solid black;
+        color: black;
+    }
+
+    .sap-xep .active {
+        border: 2px solid black;
+        color: black;
     }
 </style>
 
@@ -397,7 +439,7 @@
     <div id="header-bot">
         <nav>
             <ul>
-                <li><a href="#">Trang chủ</a></li>
+                <li><a class="active-menu" href="#">Trang chủ</a></li>
                 <li><a href="#">Thanh toán</a></li>
                 <li><a href="#">Giới thiệu</a></li>
                 <li><a href="#">Liên hệ</a></li>
@@ -435,6 +477,13 @@
             <div class="danh-muc">
                 <span>Sản phẩm nổi bật</span>
             </div>
+            <div class="sap-xep">
+                <ul>
+                    <li><a class="active" value="tangDan">Tăng dần</a></li>
+                    <li><a value="giamDan">Giảm dần</a></li>
+                    <li><a value="giamNhieu">Giảm nhiều</a></li>
+                </ul>
+            </div>
             <div class="main">
 
 
@@ -445,16 +494,84 @@
 
                     </div>
                 </div>
-                <div id="nut-next-prev">
-                    <span id="btn-prev-sp"><i onclick="onClickXemSanPhamTruoc()" class="fas fa-chevron-left"></i></span>
-                    <span id="btn-next-sp"><i onclick="onClickXemSanPhamSau()" class="fas fa-chevron-right"></i></span>
+                <div class="nut-next-prev">
+                    <span class="btn-prev-sp"><i onclick="onClickXemSanPhamTruoc('san-pham-noi-bat')"
+                            class="fas fa-chevron-left"></i></span>
+                    <span class="btn-next-sp"><i onclick="onClickXemSanPhamSau('san-pham-noi-bat')"
+                            class="fas fa-chevron-right"></i></span>
                 </div>
 
 
             </div>
 
         </div>
-        
+
+        <div class="san-pham-noi-bat">
+            <div class="danh-muc">
+                <span>Laptop Gaming</span>
+            </div>
+            <div class="sap-xep">
+                <ul>
+                    <li><a class="active">Tăng dần</a></li>
+                    <li><a>Giảm dần</a></li>
+                    <li><a>Giảm nhiều</a></li>
+                </ul>
+            </div>
+            <div class="main">
+
+
+                <div class="san-pham">
+
+
+                    <div id="san-pham-dien-thoai">
+
+                    </div>
+                </div>
+                <div class="nut-next-prev">
+                    <span class="btn-prev-sp"><i onclick="onClickXemSanPhamTruoc()"
+                            class="fas fa-chevron-left"></i></span>
+                    <span class="btn-next-sp"><i onclick="onClickXemSanPhamSau()"
+                            class="fas fa-chevron-right"></i></span>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="san-pham-noi-bat">
+            <div class="danh-muc">
+                <span>màn hình</span>
+            </div>
+            <div class="sap-xep">
+                <ul>
+                    <li><a class="active">Tăng dần</a></li>
+                    <li><a>Giảm dần</a></li>
+                    <li><a>Giảm nhiều</a></li>
+                </ul>
+            </div>
+            <div class="main">
+
+
+                <div class="san-pham">
+
+
+                    <div id="san-pham-laptop">
+
+                    </div>
+                </div>
+                <div class="nut-next-prev">
+                    <span class="btn-prev-sp"><i onclick="onClickXemSanPhamTruoc()"
+                            class="fas fa-chevron-left"></i></span>
+                    <span class="btn-next-sp"><i onclick="onClickXemSanPhamSau()"
+                            class="fas fa-chevron-right"></i></span>
+                </div>
+
+
+            </div>
+
+        </div>
+
     </main>
 
     <footer>
@@ -465,29 +582,81 @@
 </body>
 <script src="javascript.js"></script>
 <script>
+    var danhSachSanPhamNoiBat = layDanhSachSanPhamNoiBat();
+    var danhSachSanPhamNoiBatMacDinh = danhSachSanPhamNoiBat.sort((a, b) => (Number(a.giaBan()) > Number(b.giaBan())) ? 1 : -1);
+    var nodeSapXep = document.querySelectorAll('.san-pham-noi-bat .sap-xep ul li a');
 
-    giaoDienDangNhap();
+
+    //click xem tua sản phẩm
     var k = 0;
-    function onClickXemSanPhamSau() {
-        k++;
-        if (k > 3) k = 3;
-        var x = document.getElementById('san-pham-noi-bat');
 
-        x.style.transform = 'translateX(-' + k * 243 + 'px)';
+    function onClickXemSanPhamSau(nodeHienThiDanhSach) {
+        k++;
+        console.log(k)
+        var soLuongSanPham = layDanhSachSanPhamNoiBat().length / 5;
+        if (k > soLuongSanPham - 1) k = Math.ceil(soLuongSanPham - 1);
+        var x = document.getElementById(nodeHienThiDanhSach);
+
+        x.style.transform = 'translateX(-' + k * 243 * 5 + 'px)';
     }
 
-    function onClickXemSanPhamTruoc() {
+    function onClickXemSanPhamTruoc(nodeHienThiDanhSach) {
         k--;
         if (k < 0) k = 0;
         // if(k>=3) k= 1;
-        var x = document.getElementById('san-pham-noi-bat');
-        x.style.transform = 'translateX(-' + k * 243 + 'px)';
+        var x = document.getElementById(nodeHienThiDanhSach);
+        console.log(nodeHienThiDanhSach)
+        x.style.transform = 'translateX(-' + k * 243 * 5 + 'px)';
+    }
+
+    //Hiển thị tổng sản phẩm giỏ hàng
+    hienTongSoLuong();
+
+    //Hiển thị sản phẩm nổi bật
+    hienThiSanPham('san-pham-noi-bat', danhSachSanPhamNoiBatMacDinh);
+
+    for (var i = 0; i < nodeSapXep.length; i++) {
+        nodeSapXep[i].addEventListener("click", function () {
+            thayDoiActive(event);
+            sapXepSanPham(event);
+        });
+    }
+
+    function sapXepSanPham(event) {
+        var danhSachSanPhamNoiBat = layDanhSachSanPhamNoiBat();
+        var kieuSapXep = event.target.getAttribute('value');
+        console.log(kieuSapXep);
+        k = 0;
+        if (kieuSapXep == 'tangDan') {
+            danhSachSanPhamNoiBat.sort((a, b) => (Number(a.giaBan()) > Number(b.giaBan())) ? 1 : -1);
+
+        } else if (kieuSapXep == 'giamDan') {
+            danhSachSanPhamNoiBat.sort((a, b) => (Number(a.giaBan()) > Number(b.giaBan())) ? -1 : 1);
+
+        } else {
+            danhSachSanPhamNoiBat.sort((a, b) => (Number(a.phanTramGiamGia) > Number(b.phanTramGiamGia)) ? -1 : 1);
+        }
+        hienThiSanPham('san-pham-noi-bat', danhSachSanPhamNoiBat)
+
+        //Tua sản phẩm về vị trí 0
+        onClickXemSanPhamTruoc("san-pham-noi-bat");
+    }
+    console.log(nodeSapXep);
+    function thayDoiActive(event) {
+        var nodeCha = event.target.parentElement.parentElement;
+        var allNodeCon = nodeCha.querySelectorAll('a');
+        for (var nodeCon of allNodeCon) {
+            nodeCon.removeAttribute('class');
+        }
+        event.target.setAttribute('class', 'active');
     }
 
 
-</script>
+    giaoDienDangNhap();
 
-<script>
+
+
+
     var start = 0;
     var danhSachSliderItem = document.getElementsByName('slider-item');
     hienThiSlideHienTai(start);
@@ -514,90 +683,18 @@
 
 
 
-    hienThiSanPham();
-    function hienThiSanPham() {
-        let nodeHienThi = document.getElementById('san-pham-noi-bat');
-        nodeHienThi.innerHTML = HTMLDanhSachSanPham();
-    }
 
-    document.getElementById("btn-them-san-pham").addEventListener("click", function () {
-        checkInputThemSanPham();
-    });
 
-    function themSanPham(sanPham) {
-        var danhSach = danhSachSanPham();
-        console.log(danhSach);
-        danhSach.unshift(sanPham);
-        localStorage.setItem(keyLocalSanPhamMoi, JSON.stringify(danhSach));
-        
+
+
+    function hienThiSanPham(idNodeHienThi, danhSach) {
+        var danhSachHTML = chuyenDanhSachThanhHTML(danhSach);
+        let nodeHienThi = document.getElementById(idNodeHienThi);
+        nodeHienThi.innerHTML = danhSachHTML;
     }
 
 
-    function checkInputThemSanPham() {
-        var check = true;
-        let nodeInput = document.querySelectorAll('.form-input-san-pham input[required]');
 
-
-        let nodeHienThiLoi = document.getElementsByClassName('hien-thi-loi')
-
-
-        for (let i = 0; i < nodeInput.length; i++) {
-            if (nodeInput[i].value == '') {
-                check = false;
-                if (nodeInput[i].id == 'hinhAnh') {
-                    var tenLoi = 'Hình ảnh';
-                }
-                if (nodeInput[i].id == 'tenSanPham') {
-                    var tenLoi = 'Tên sản phẩm';
-                }
-                if (nodeInput[i].id == 'giaGoc') {
-                    var tenLoi = 'Giá gốc sản phẩm';
-                }
-                if (nodeInput[i].id == 'phanTramGiamGia') {
-                    var tenLoi = 'Phần trăm giảm giá';
-                }
-
-                nodeHienThiLoi[i].innerHTML = tenLoi + ' không được bỏ trống!';
-            } else {
-                if (nodeInput[i].id == 'hinhAnh') {
-                    nodeHienThiLoi[i].innerHTML = '';
-                    var hinhAnh = nodeInput[i].value;
-                }
-                if (nodeInput[i].id == 'tenSanPham') {
-                    nodeHienThiLoi[i].innerHTML = '';
-                    var tenSanPham = nodeInput[i].value;
-                }
-                if (nodeInput[i].id == 'giaGoc') {
-                    if (nodeInput[i].value < 0) {
-                        check = false;
-                        nodeHienThiLoi[i].innerHTML = 'Giá gốc không thể âm!';
-
-                    } else {
-                        var giaGoc = nodeInput[i].value;
-                    }
-                }
-                if (nodeInput[i].id == 'phanTramGiamGia') {
-                    if (nodeInput[i].value < 0 || nodeInput[i].value > 100) {
-                        check = false;
-                        nodeHienThiLoi[i].innerHTML = 'Vui lòng nhập trong khoảng từ 0 - 100';
-
-                    } else {
-                        var phanTramGiamGia = nodeInput[i].value;
-                    }
-                }
-            }
-
-        }
-
-        console.log(nodeInput);
-        if (check != false) {
-            let sanpham = sanPham(hinhAnh, tenSanPham, giaGoc, phanTramGiamGia);
-            console.log('sanpham');
-            console.log(sanpham);
-            themSanPham(sanpham);
-        }
-     
-    }
 
 
 </script>

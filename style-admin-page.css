@@ -54,6 +54,8 @@ nav ul li a:hover {
     background-color:  #1a2226;
 }
 
+
+
 .aside ul {
     margin-top: 40px;
     width: 100%;
@@ -107,11 +109,47 @@ nav ul li a:hover {
     box-sizing: border-box;
     border: 1px solid #ddd;
     width: 225px;
-    max-height: 330px;
+    max-height: 360px;
     padding: 15px;
     box-shadow: 2px 2px 4px #ddd;
     position: relative;
 }
+
+
+
+.item .ten-san-pham {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.item .ten-san-pham span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.item .gia-ban span {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(250, 67, 35);
+}
+
+.item .gia-truoc-giam span {
+    font-size: 12px;
+    text-decoration: line-through;
+    
+}
+
+
+
+
+
 
 #danh-sach-san-pham .item .anh-san-pham {
     width: 200px;
@@ -128,7 +166,7 @@ nav ul li a:hover {
 #danh-sach-san-pham .item .thong-tin-san-pham {
  
     padding-top: 20px;
-    width: 140px;
+    width: 100%;
     height: fit-content;
 
     display: block;
@@ -244,6 +282,17 @@ nav ul li a:hover {
     padding: 7px 10px;
     margin-bottom: 15px;
 }
+
+.form .hien-thi-loi {
+    margin-top: -10px;
+    margin-bottom: 10px;
+ 
+}
+
+.form .hien-thi-loi p{
+    font-size: 12px !important;
+    color: red;
+}   
 .container-btn {
    text-align: right;
    margin-top: 20px;
