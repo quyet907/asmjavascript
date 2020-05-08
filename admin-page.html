@@ -288,7 +288,7 @@
             '                           <span>' + sanPham.giaGoc + '</span>  ' +
             '                       </div>  ' +
             '                       <div class="phan-tram-giam-gia">  ' +
-            '                           <span>' + sanPham.phanTramGiamGia + '</span>  ' +
+            '                           <span>-' + sanPham.phanTramGiamGia + '%</span>  ' +
             '                       </div>  ' +
             '                   </div>  ' +
 
@@ -311,6 +311,8 @@
         var giaGoc = nodeCha.querySelector('.thong-tin-san-pham .gia-truoc-giam span').innerText;
         var phanTramGiamGia = nodeCha.querySelector('.thong-tin-san-pham .phan-tram-giam-gia span').innerText;
 
+        var regex = /\d+/g;
+        phanTramGiamGia = phanTramGiamGia.match(regex);  
         var danhSach = danhSachSanPham();
         var loaiSanPhamDefault = 'manHinh';
         for (var sanPham of danhSach){
@@ -326,6 +328,7 @@
         var nodeLuuSanPham = document.querySelector('#btn-luu-san-pham').setAttribute('onClick', 'luuSanPham(' + idSanPham + ')');
         var nodeLoaiSanPham = document.querySelectorAll('#loaiSanPham-re option');
         for (var option of nodeLoaiSanPham){
+            option.removeAttribute('selected');
             if (option.getAttribute('value')==loaiSanPhamDefault){
                 option.setAttribute('selected', 'true');
             }
@@ -344,12 +347,13 @@
             }
         }
 
+        if(gioHang){
         for (var i = 0; i < gioHang.length; i++) {
             if ( gioHang[i].id == idSanPham) {
                 gioHang.splice(i,1);
                 break;
             }
-        }
+        }}
         localStorage.setItem(keyLocalGioHang, JSON.stringify(gioHang));
         localStorage.setItem(keyLocalSanPhamMoi, JSON.stringify(danhSach));
         hienThiSanPham();

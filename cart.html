@@ -450,22 +450,23 @@
 
             } else {
                 var check = true;
-                if (input[i].id == 'hoTen') {
+                // if (input[i].id == 'hoTen') {
 
 
-                }
-                if (input[i].id == 'diaChi') {
+                // }
+                // if (input[i].id == 'diaChi') {
 
-                }
+                // }
                 if (input[i].id == 'soDienThoai') {
                     if (input[i].value.length > 11 || input[i].value.length < 10) {
-                        document.querySelectorAll('.error')[i].innerHTML = 'Vui lòng nhập đúng số điện thoại';
+                        document.querySelectorAll('.hien-thi-loi p')[i].innerHTML = 'Vui lòng nhập đúng số điện thoại';
                         check = false;
                     }
+                   
                 }
                 if (input[i].id == 'gioNhanHang') {
                     if (input[i].value < 8 || input[i].value > 18) {
-                        document.querySelectorAll('.error')[i].innerHTML = 'Vui lòng nhập từ 8 - 18h';
+                        document.querySelectorAll('.hien-thi-loi p')[i].innerHTML = 'Vui lòng nhập từ 8 - 18h';
                         check = false;
                     }
                 }

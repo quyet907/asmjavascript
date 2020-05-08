@@ -155,11 +155,14 @@ nav ul li a:hover {
     width: 200px;
     height: 200px;
     text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 #danh-sach-san-pham .item .anh-san-pham img {
+    width: 95%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 
 }
 
@@ -170,6 +173,21 @@ nav ul li a:hover {
     height: fit-content;
 
     display: block;
+}
+
+.phan-tram-giam-gia{
+    width: 40px;
+    height: 36px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    text-align: center;
+    padding-top: 2px;
+    color: #fff;
+    font-weight: bold;
+    background-image: url(images/deal-tag.png);
+    background-repeat: no-repeat;
 }
 
 

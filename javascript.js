@@ -138,18 +138,44 @@ function HTMLDanhSachSanPham() {
 function layDanhSachSanPhamNoiBat() {
     let danhSach = danhSachSanPham();
     let danhSachSanPhamNoiBat = [];
-    if (danhSach.length >0) {
-      
+    if (danhSach.length > 0) {
+
         for (var i = 0; i < danhSach.length; i++) {
-            if (i>15) break;
+            if (i > 15) break;
             danhSachSanPhamNoiBat[i] = danhSach[i];
         }
     }
     return danhSachSanPhamNoiBat;
 }
-console.log('danhSachSanPham')
-console.log(danhSachSanPham());
-console.log(layDanhSachSanPhamNoiBat())
+
+function layDanhSachSanPhamLaptop() {
+    let danhSach = danhSachSanPham();
+    let danhSachSanPhamLaptop = [];
+    if (danhSach.length > 0) {
+
+        for (var i = 0; i < danhSach.length; i++) {
+            if (danhSach[i].loaiSanPham == 'laptop') {
+                danhSachSanPhamLaptop[i] = danhSach[i];
+            }
+        }
+    }
+    return danhSachSanPhamLaptop;
+}
+
+
+function layDanhSachSanPhamManHinh() {
+    let danhSach = danhSachSanPham();
+    let danhSachSanPhamManHinh = [];
+    if (danhSach.length > 0) {
+
+        for (var i = 0; i < danhSach.length; i++) {
+            if (danhSach[i].loaiSanPham == 'manHinh') {
+                danhSachSanPhamManHinh[i] = danhSach[i];
+            }
+        }
+    }
+    return danhSachSanPhamManHinh;
+}
 
 function chuyenDanhSachThanhHTML(danhSach) {
 
@@ -164,6 +190,7 @@ function layDanhSachLaptop() {
     let danhSach = danhSachSanPham();
     let danhSachLaptop = [];
     for (var i = 0; i < danhSach.length; i++) {
+       
         if (danhSach[i].loaiSanPham == 'laptop') {
             danhSachLaptop[i] = danhSach[i];
         }

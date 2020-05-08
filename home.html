@@ -478,7 +478,7 @@
                 <span>Sản phẩm nổi bật</span>
             </div>
             <div class="sap-xep">
-                <ul>
+                <ul id="sap-xep-san-pham-noi-bat">
                     <li><a class="active" value="tangDan">Tăng dần</a></li>
                     <li><a value="giamDan">Giảm dần</a></li>
                     <li><a value="giamNhieu">Giảm nhiều</a></li>
@@ -511,43 +511,10 @@
                 <span>Laptop Gaming</span>
             </div>
             <div class="sap-xep">
-                <ul>
-                    <li><a class="active">Tăng dần</a></li>
-                    <li><a>Giảm dần</a></li>
-                    <li><a>Giảm nhiều</a></li>
-                </ul>
-            </div>
-            <div class="main">
-
-
-                <div class="san-pham">
-
-
-                    <div id="san-pham-dien-thoai">
-
-                    </div>
-                </div>
-                <div class="nut-next-prev">
-                    <span class="btn-prev-sp"><i onclick="onClickXemSanPhamTruoc()"
-                            class="fas fa-chevron-left"></i></span>
-                    <span class="btn-next-sp"><i onclick="onClickXemSanPhamSau()"
-                            class="fas fa-chevron-right"></i></span>
-                </div>
-
-
-            </div>
-
-        </div>
-
-        <div class="san-pham-noi-bat">
-            <div class="danh-muc">
-                <span>màn hình</span>
-            </div>
-            <div class="sap-xep">
-                <ul>
-                    <li><a class="active">Tăng dần</a></li>
-                    <li><a>Giảm dần</a></li>
-                    <li><a>Giảm nhiều</a></li>
+                <ul id="sap-xep-san-pham-laptop">
+                    <li><a class="active" value="tangDan">Tăng dần</a></li>
+                    <li><a value="giamDan">Giảm dần</a></li>
+                    <li><a value="giamNhieu">Giảm nhiều</a></li>
                 </ul>
             </div>
             <div class="main">
@@ -561,9 +528,42 @@
                     </div>
                 </div>
                 <div class="nut-next-prev">
-                    <span class="btn-prev-sp"><i onclick="onClickXemSanPhamTruoc()"
+                    <span class="btn-prev-sp"><i onclick="onClickXemSanPhamTruoc('san-pham-laptop')"
                             class="fas fa-chevron-left"></i></span>
-                    <span class="btn-next-sp"><i onclick="onClickXemSanPhamSau()"
+                    <span class="btn-next-sp"><i onclick="onClickXemSanPhamSau('san-pham-laptop')"
+                            class="fas fa-chevron-right"></i></span>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="san-pham-noi-bat">
+            <div class="danh-muc">
+                <span>màn hình</span>
+            </div>
+            <div class="sap-xep">
+                <ul id="sap-xep-san-pham-man-hinh">
+                    <li><a class="active" value="tangDan">Tăng dần</a></li>
+                    <li><a value="giamDan">Giảm dần</a></li>
+                    <li><a value="giamNhieu">Giảm nhiều</a></li>
+                </ul>
+            </div>
+            <div class="main">
+
+
+                <div class="san-pham">
+
+
+                    <div id="san-pham-man-hinh">
+
+                    </div>
+                </div>
+                <div class="nut-next-prev">
+                    <span class="btn-prev-sp"><i onclick="onClickXemSanPhamTruoc('san-pham-man-hinh')"
+                            class="fas fa-chevron-left"></i></span>
+                    <span class="btn-next-sp"><i onclick="onClickXemSanPhamSau('san-pham-man-hinh')"
                             class="fas fa-chevron-right"></i></span>
                 </div>
 
@@ -584,7 +584,7 @@
 <script>
     var danhSachSanPhamNoiBat = layDanhSachSanPhamNoiBat();
     var danhSachSanPhamNoiBatMacDinh = danhSachSanPhamNoiBat.sort((a, b) => (Number(a.giaBan()) > Number(b.giaBan())) ? 1 : -1);
-    var nodeSapXep = document.querySelectorAll('.san-pham-noi-bat .sap-xep ul li a');
+
 
 
     //click xem tua sản phẩm
@@ -592,7 +592,7 @@
 
     function onClickXemSanPhamSau(nodeHienThiDanhSach) {
         k++;
-        console.log(k)
+       
         var soLuongSanPham = layDanhSachSanPhamNoiBat().length / 5;
         if (k > soLuongSanPham - 1) k = Math.ceil(soLuongSanPham - 1);
         var x = document.getElementById(nodeHienThiDanhSach);
@@ -605,7 +605,7 @@
         if (k < 0) k = 0;
         // if(k>=3) k= 1;
         var x = document.getElementById(nodeHienThiDanhSach);
-        console.log(nodeHienThiDanhSach)
+     
         x.style.transform = 'translateX(-' + k * 243 * 5 + 'px)';
     }
 
@@ -615,6 +615,27 @@
     //Hiển thị sản phẩm nổi bật
     hienThiSanPham('san-pham-noi-bat', danhSachSanPhamNoiBatMacDinh);
 
+    //Hiển thị sản phẩm laptop
+    hienThiSanPhamLaptop();
+    function hienThiSanPhamLaptop() {
+        var danhSachSanPhamLaptop = layDanhSachSanPhamLaptop();
+        var danhSachLaptopFilter = danhSachSanPhamLaptop.filter(n => n);
+        hienThiSanPham('san-pham-laptop', danhSachLaptopFilter);
+    }
+
+
+
+    //Hiển thị sản phẩm màn hình
+    hienThiSanPhamManHinh();
+    function hienThiSanPhamManHinh() {
+        var danhSachSanPhamManHinh = layDanhSachSanPhamManHinh();
+        var danhSachManHinhFilter = danhSachSanPhamManHinh.filter(n => n);
+        hienThiSanPham('san-pham-man-hinh', danhSachManHinhFilter);
+    }
+
+
+
+    var nodeSapXep = document.querySelectorAll('.sap-xep ul li a');
     for (var i = 0; i < nodeSapXep.length; i++) {
         nodeSapXep[i].addEventListener("click", function () {
             thayDoiActive(event);
@@ -623,25 +644,50 @@
     }
 
     function sapXepSanPham(event) {
-        var danhSachSanPhamNoiBat = layDanhSachSanPhamNoiBat();
+        var nodeChaSapXep = event.target.parentElement.parentElement;
+
+        var idNodeChaSapXep = nodeChaSapXep.getAttribute('id');
+   
+
+        var danhSachSanPhamNoiBat = layDanhSachSanPhamNoiBat().filter(n=>n);
+        var danhSachSanPhamLaptop = layDanhSachSanPhamLaptop().filter(n=>n);
+        var danhSachSanPhamManHinh = layDanhSachSanPhamManHinh().filter(n=>n);
+
         var kieuSapXep = event.target.getAttribute('value');
-        console.log(kieuSapXep);
+      
         k = 0;
-        if (kieuSapXep == 'tangDan') {
-            danhSachSanPhamNoiBat.sort((a, b) => (Number(a.giaBan()) > Number(b.giaBan())) ? 1 : -1);
 
-        } else if (kieuSapXep == 'giamDan') {
-            danhSachSanPhamNoiBat.sort((a, b) => (Number(a.giaBan()) > Number(b.giaBan())) ? -1 : 1);
+        var danhSachNoiBatDaSapXep = danhSachSanPhamDaSapXep(danhSachSanPhamNoiBat, kieuSapXep);
+        var danhSachLaptopDaSapXep = danhSachSanPhamDaSapXep(danhSachSanPhamLaptop, kieuSapXep);
+        var danhSachManHinhDaSapXep = danhSachSanPhamDaSapXep(danhSachSanPhamManHinh, kieuSapXep);
 
+        //Hiển thị sản phẩm sắp xếp
+        if (idNodeChaSapXep == 'sap-xep-san-pham-noi-bat') {
+            hienThiSanPham('san-pham-noi-bat', danhSachNoiBatDaSapXep)
+        } else if (idNodeChaSapXep == 'sap-xep-san-pham-laptop') {
+            hienThiSanPham('san-pham-laptop', danhSachLaptopDaSapXep)
         } else {
-            danhSachSanPhamNoiBat.sort((a, b) => (Number(a.phanTramGiamGia) > Number(b.phanTramGiamGia)) ? -1 : 1);
+            hienThiSanPham('san-pham-man-hinh', danhSachManHinhDaSapXep)
         }
-        hienThiSanPham('san-pham-noi-bat', danhSachSanPhamNoiBat)
+
 
         //Tua sản phẩm về vị trí 0
         onClickXemSanPhamTruoc("san-pham-noi-bat");
     }
-    console.log(nodeSapXep);
+
+    function danhSachSanPhamDaSapXep(danhSach, kieuSapXep) {
+        if (kieuSapXep == 'tangDan') {
+            danhSach.sort((a, b) => (Number(a.giaBan()) > Number(b.giaBan())) ? 1 : -1);
+
+        } else if (kieuSapXep == 'giamDan') {
+            danhSach.sort((a, b) => (Number(a.giaBan()) > Number(b.giaBan())) ? -1 : 1);
+
+        } else {
+            danhSach.sort((a, b) => (Number(a.phanTramGiamGia) > Number(b.phanTramGiamGia)) ? -1 : 1);
+        }
+        return danhSach;
+    }
+  
     function thayDoiActive(event) {
         var nodeCha = event.target.parentElement.parentElement;
         var allNodeCon = nodeCha.querySelectorAll('a');

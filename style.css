@@ -257,7 +257,7 @@ footer {
 
 }
 
-#san-pham-noi-bat, #san-pham-dien-thoai, #san-pham-laptop {
+#san-pham-noi-bat, #san-pham-laptop, #san-pham-man-hinh {
     
        
     /* background-color: green; */
@@ -299,11 +299,14 @@ footer {
     width: 200px;
     height: 170px;
     text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .san-pham-noi-bat .item .anh-san-pham img {
     height: 100%;
-    object-fit: cover;
+    width: 95%;
+    object-fit: contain;
 
 }
 
@@ -522,8 +525,9 @@ main#gio-hang .danh-sach-gio-hang .item-gio-hang{
  }
 
 .danh-sach-gio-hang .item-gio-hang .anh-san-pham img {
+    width: 100%;
     height: 100%;
-    border-radius: 4px;
+    object-fit: contain;
 }
 
 .danh-sach-gio-hang .item-gio-hang {
