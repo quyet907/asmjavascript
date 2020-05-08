@@ -140,7 +140,8 @@ function layDanhSachSanPhamNoiBat() {
     let danhSachSanPhamNoiBat = [];
     if (danhSach.length >0) {
       
-        for (var i = 0; i < 16; i++) {
+        for (var i = 0; i < danhSach.length; i++) {
+            if (i>15) break;
             danhSachSanPhamNoiBat[i] = danhSach[i];
         }
     }
