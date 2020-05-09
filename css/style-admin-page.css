@@ -186,7 +186,7 @@ nav ul li a:hover {
     padding-top: 2px;
     color: #fff;
     font-weight: bold;
-    background-image: url(images/deal-tag.png);
+    background-image: url('../images/deal-tag.png');
     background-repeat: no-repeat;
 }
 

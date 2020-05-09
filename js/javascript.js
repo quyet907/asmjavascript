@@ -51,7 +51,10 @@ function danhSachSanPham() {
 
 function HTMLSanPham(sanPham) {
     let HTML = '';
-    HTML = '   <div class="item">  ' +
+    HTML = 
+
+    '   <div class="item">  ' +
+    
         '                   <div class="anh-san-pham">  ' +
         '                       <img src="' + sanPham.hinhAnh + '"  ' +
         '                           alt="">  ' +
@@ -74,6 +77,7 @@ function HTMLSanPham(sanPham) {
         '                       <i class="fas fa-cart-plus"  style="color: rgb(250, 67, 35); "></i>  ' +
 
         '                   </button>  ' +
+
         '              </div>  ';
     return HTML;
 }
@@ -216,7 +220,8 @@ function HTMLItemGioHang(item) {
     let sanPhamDayDu = chuyenIdThanhSanPhamDayDu(item.id);
 
     let HTML = '';
-    HTML += '   <div class="item-gio-hang">  ' +
+    HTML += 
+        '   <div class="item-gio-hang">  ' +
         '                   <div class="anh-san-pham">  ' +
         '                       <img src="' + sanPhamDayDu.hinhAnh + '" alt="">  ' +
         '                   </div>  ' +
@@ -241,6 +246,7 @@ function HTMLItemGioHang(item) {
         '                       <i class="fas fa-times"></i>  ' +
         '                   </div>  ' +
         '              </div>  ';
+    
     return HTML;
 }
 

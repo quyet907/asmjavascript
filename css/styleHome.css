@@ -1,0 +1,350 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: sans-serif;
+    }
+
+    #header-top {
+        width: 100%;
+        height: 40px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    #header-top .main {
+        width: 1200px;
+        height: 40px;
+        margin: 0 auto;
+
+    }
+
+    #header-top .main .thong-tin-lien-he {
+        width: fit-content;
+        display: flex;
+        padding: 10px;
+        float: left;
+    }
+
+    #header-top .main .thong-tin-lien-he .phan-cach {
+        border-right: 1px solid black;
+        height: 20px;
+    }
+
+    #header-top .login-sign-up {
+        width: fit-content;
+        float: right;
+    }
+
+    #header-top .main .thong-tin-lien-he span {
+        padding: 0px 15px;
+    }
+
+    #header-top .login-sign-up ul li {
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+
+        text-align: center;
+    }
+
+    #header-top .login-sign-up ul li a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+
+    }
+
+    #header-mid {
+        width: 100%;
+        height: 120px;
+
+    }
+
+    #header-mid .main {
+
+        box-sizing: border-box;
+        width: 1200px;
+        height: 100px;
+        margin: 0 auto;
+
+        clear: both;
+        padding: 20px 0px;
+
+
+    }
+
+    #header-mid .main .logo {
+        width: 19%;
+        height: 100%;
+        float: left;
+
+    }
+
+    #header-mid .main .logo img {
+        height: 60px;
+        margin-left: 20px;
+    }
+
+    #header-mid .main .tim-kiem {
+        width: 65%;
+        height: fit-content;
+        float: left;
+        /* background-color: green; */
+        display: flex;
+        margin-top: 10px;
+    }
+
+    #header-mid .main .gio-hang {
+        width: 15%;
+        height: 100%;
+        float: left;
+
+    }
+
+    #header-mid .main .tim-kiem input {
+        font-size: 19px;
+        width: 630px;
+        height: 20px;
+        padding: 10px 20px;
+        border: 1px solid #ddd;
+        outline: none;
+    }
+
+    #header-mid .main .tim-kiem button {
+        outline: none;
+        width: 45px;
+        border: 1px solid #ddd;
+        background-color: #f6c248;
+        cursor: pointer;
+
+    }
+
+    #header-mid .main .gio-hang .gio {
+
+        width: 100%;
+        height: 100%;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #header-bot {
+        background-color: black;
+        width: 100%;
+        height: 50px;
+    }
+
+    #header-bot nav {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    #header-bot nav ul {
+        width: fit-content;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    #header-bot nav ul li {
+        list-style: none;
+        width: 140px;
+
+        border-left: 1px solid rgba(221, 221, 221, 0.377);
+        text-align: center;
+    }
+
+    #header-bot nav ul li a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        height: 50px;
+        line-height: 50px;
+        padding: 0px 10px;
+        font-weight: bold;
+
+    }
+
+    #header-bot nav .active-menu {
+        background-color: #e5ad2c;
+    }
+
+
+    #header-bot nav ul li:last-child {
+        border-right: 1px solid rgba(221, 221, 221, 0.377);
+    }
+
+    #header-bot nav ul li:hover {
+        background-color: #e5ad2c;
+    }
+
+    #slider {
+        width: 1600px;
+        height: 700px;
+
+        margin: 0 auto;
+        background-color: cornflowerblue;
+        position: relative;
+
+    }
+
+    #slider .slider-item img {
+        height: 100%;
+    }
+
+    #slider .slider-item {
+        text-align: center;
+        height: 750px;
+        display: none;
+    }
+
+
+
+    .nut-slider span {
+        display: block;
+        padding: 20px 10px;
+        cursor: pointer;
+        font-size: 40px;
+        color: white;
+        opacity: 0.6;
+        cursor: pointer;
+        background-color: crimson;
+    }
+
+
+    #btn-prev {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: 1%;
+        transform: translateY(-50%);
+    }
+
+    #btn-next {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        right: 1%;
+        transform: translateY(-50%);
+    }
+
+
+    .nut-slider i {
+        font-size: 50px;
+    }
+
+    .danh-muc {
+        text-align: center;
+    }
+
+    .danh-muc span {
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .danh-muc {
+        height: 40px;
+        width: 200px;
+        margin: 0 auto;
+        border-bottom: 3px solid rgb(47, 46, 46);
+        margin-bottom: 15px;
+
+    }
+
+
+
+    .nut-next-prev span {
+
+        padding: 20px 10px;
+        cursor: pointer;
+        font-size: 20px;
+        color: rgb(255, 0, 0);
+        opacity: 0.6;
+        cursor: pointer;
+        /* background-color: crimson; */
+    }
+
+
+
+
+
+
+    .nut-next-prev i {
+        display: flex;
+        font-size: 30px;
+        box-shadow: 2px 2px 4px;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+
+
+    /* .nut-next-prev{
+        position: absolute;
+        top: 0;
+    } */
+
+    .btn-prev-sp {
+        position: absolute;
+        top: 50%;
+        left: -7%;
+        transform: translateY(-50%);
+    }
+
+    .btn-next-sp {
+        position: absolute;
+        top: 50%;
+        right: -7%;
+        transform: translateY(-50%);
+    }
+
+    .san-pham-noi-bat .main {
+        position: relative;
+    }
+
+    .sap-xep {
+        width: 100%;
+        height: 42px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sap-xep ul li {
+        list-style: none;
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+    }
+
+    .sap-xep ul li a {
+        display: block;
+        width: 100px;
+        height: 40px;
+        border: 2px solid #ddd;
+        line-height: 40px;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 14px;
+        font-weight: 550;
+        cursor: pointer;
+    }
+
+    .sap-xep ul li:hover a {
+        border: 2px solid black;
+        color: black;
+    }
+
+    .sap-xep .active {
+        border: 2px solid black;
+        color: black;
+    }
