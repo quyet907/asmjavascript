@@ -3,8 +3,6 @@
     margin: 0;
 }
 
-   
-
 body {
     font-family: sans-serif;
 }
@@ -19,7 +17,6 @@ body {
     width: 1200px;
     height: 40px;
     margin: 0 auto;
-
 }
 
 #header-top .main .thong-tin-lien-he {
@@ -47,7 +44,6 @@ body {
     display: inline-block;
     width: 100px;
     height: 40px;
-
     text-align: center;
 }
 
@@ -58,7 +54,6 @@ body {
     width: 100px;
     height: 40px;
     line-height: 40px;
-
 }
 
 #header-mid {
@@ -70,18 +65,15 @@ body {
 
 #header-mid .main {
     margin: 0 auto;
-
     clear: both;
     width: 1200px;
     height: 100px;
 }
 
-
 #header-mid .main .logo {
     width: 19%;
     height: 100%;
     float: left;
-
 }
 
 #header-mid .main .logo img {
@@ -102,7 +94,6 @@ body {
     width: 15%;
     height: 100%;
     float: left;
-
 }
 
 #header-mid .main .tim-kiem input {
@@ -120,11 +111,9 @@ body {
     border: 1px solid #ddd;
     background-color: #f6c248;
     cursor: pointer;
-
 }
 
 #header-mid .main .gio-hang .gio {
-
     width: 100%;
     height: 100%;
     border: 2px solid black;
@@ -154,7 +143,6 @@ body {
 #header-bot nav ul li {
     list-style: none;
     width: 140px;
-
     border-left: 1px solid rgba(221, 221, 221, 0.377);
     text-align: center;
 }
@@ -167,7 +155,6 @@ body {
     line-height: 50px;
     padding: 0px 10px;
     font-weight: bold;
-
 }
 
 #header-bot nav ul li:last-child {
@@ -179,10 +166,8 @@ body {
 }
 
 #slider {
-   
     width: 1600px;
     height: 700px;
-
     margin: 0 auto;
     background-color: cornflowerblue;
     position: relative;
@@ -195,10 +180,8 @@ body {
 #slider .slider-item {
     text-align: center;
     height: 750px;
-  display: none;
+    display: none;
 }
-
-
 
 .nut-slider span {
     display: block;
@@ -207,10 +190,8 @@ body {
     font-size: 40px;
     color: white;
     opacity: 0.6;
-
     /* background-color: crimson; */
 }
-
 
 #btn-prev {
     position: absolute;
@@ -228,19 +209,14 @@ body {
     transform: translateY(-50%);
 }
 
-
 .nut-slider i {
     font-size: 50px;
-}   
-
-
-
+}
 
 header {
     height: 100px;
     background-color: rgba(255, 66, 8, 0.931);
 }
-
 
 main {
     margin: 0 auto;
@@ -254,24 +230,21 @@ footer {
     height: 150px;
     background-color: black;
     margin-top: 50px;
-
 }
 
-#san-pham-noi-bat, #san-pham-laptop, #san-pham-man-hinh {
-    
-       
+#san-pham-noi-bat,
+#san-pham-laptop,
+#san-pham-man-hinh {
     /* background-color: green; */
     display: flex;
-   
     transition: 0.8s ease-in-out;
-    
 }
 
-.san-pham-noi-bat  {
+.san-pham-noi-bat {
     margin-bottom: 100px;
 }
 
-.san-pham-noi-bat .san-pham{
+.san-pham-noi-bat .san-pham {
     height: 360px;
     padding: 10px 0px;
     width: 1200px;
@@ -279,8 +252,7 @@ footer {
     /* background-color: green; */
 }
 
-
-.san-pham-khuyen-mai{
+.san-pham-khuyen-mai {
     margin-top: 50px;
 }
 
@@ -307,15 +279,12 @@ footer {
     height: 100%;
     width: 95%;
     object-fit: contain;
-
 }
 
 .san-pham-noi-bat .item .thong-tin-san-pham {
-  
     padding-top: 20px;
     width: 100%;
     height: fit-content;
-
     display: block;
 }
 
@@ -336,20 +305,18 @@ footer {
     font-weight: bold;
 }
 
-.san-pham-noi-bat .item .gia-ban span, .item-gio-hang .gia-ban {
+.san-pham-noi-bat .item .gia-ban span,
+.item-gio-hang .gia-ban {
     font-size: 20px;
     font-weight: bold;
     color: rgb(250, 67, 35);
 }
 
-.san-pham-noi-bat .item .gia-truoc-giam span, .item-gio-hang .gia-goc {
+.san-pham-noi-bat .item .gia-truoc-giam span,
+.item-gio-hang .gia-goc {
     font-size: 12px;
     text-decoration: line-through;
-    
 }
-
-
-
 
 .san-pham-noi-bat .btn-them-san-pham {
     opacity: 0;
@@ -376,12 +343,11 @@ footer {
     padding-top: 2px;
     color: #fff;
     font-weight: bold;
-    background-image: url(images/deal-tag.png);
+    background-image: url(../images/deal-tag.png);
     background-repeat: no-repeat;
 }
 
 .san-pham-noi-bat .item:hover {
-
     transform: translateY(-4px);
     transition: transform 0.3s ease-in-out;
 }
@@ -390,8 +356,6 @@ footer {
     opacity: 1;
     transition: .7s ease-in-out;
 }
-
-
 
 nav {
     width: 1200px;
@@ -412,7 +376,7 @@ menu ul li {
     list-style: none;
 }
 
-.form-input-san-pham label, 
+.form-input-san-pham label,
 .form-input-san-pham label input {
     width: 100%;
 }
@@ -420,14 +384,11 @@ menu ul li {
 .form-input-san-pham label {
     font-size: 16px;
     font-weight: bold;
-  
 }
 
 .form-input-san-pham input {
     padding: 7px 10px;
     width: 100%;
-
-  
     margin-bottom: 15px;
 }
 
@@ -438,10 +399,10 @@ menu ul li {
     height: 15px;
 }
 
-.form .hien-thi-loi p{
+.form .hien-thi-loi p {
     font-size: 12px !important;
     color: red;
-}   
+}
 
 .modal-content {
     padding: 10px 10px;
@@ -455,7 +416,7 @@ main#gio-hang {
 .clearfix:after {
     content: ".";
     visibility: hidden;
-    display: block; 
+    display: block;
     clear: both;
 }
 
@@ -463,10 +424,8 @@ main#gio-hang .danh-sach-gio-hang {
     width: 768px;
     min-height: 500px;
     float: left;
-    
     /* background-color: turquoise; */
 }
-
 
 main#gio-hang .thanh-toan {
     box-sizing: border-box;
@@ -478,7 +437,7 @@ main#gio-hang .thanh-toan {
     padding: 30px;
 }
 
-main#gio-hang .danh-sach-gio-hang .item-gio-hang{
+main#gio-hang .danh-sach-gio-hang .item-gio-hang {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -490,7 +449,7 @@ main#gio-hang .danh-sach-gio-hang .item-gio-hang{
 }
 
 .danh-sach-gio-hang .item-gio-hang .anh-san-pham {
-   box-sizing: border-box;
+    box-sizing: border-box;
     width: 75px;
     height: 75px;
     border-radius: 4px;
@@ -500,29 +459,25 @@ main#gio-hang .danh-sach-gio-hang .item-gio-hang{
 }
 
 .danh-sach-gio-hang .item-gio-hang .ten-san-pham {
-   
-   width: 200px;
-   height: 60px;
-   word-wrap: break-word;
-   overflow: hidden;
-   display: -webkit-box;
-   text-overflow: ellipsis;
-   -webkit-box-orient: vertical;
-   -webkit-line-clamp: 3;
+    width: 200px;
+    height: 60px;
+    word-wrap: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
     font-size: 15px;
     font-weight: 550;
 }
 
 .danh-sach-gio-hang .item-gio-hang .so-luong {
-  
     width: 120px;
+}
 
- }
- .danh-sach-gio-hang .item-gio-hang .gia {
-    
+.danh-sach-gio-hang .item-gio-hang .gia {
     width: 110px;
-
- }
+}
 
 .danh-sach-gio-hang .item-gio-hang .anh-san-pham img {
     width: 100%;
@@ -534,11 +489,11 @@ main#gio-hang .danh-sach-gio-hang .item-gio-hang{
     border-bottom: 2px solid #ddd;
 }
 
-.danh-sach-gio-hang:first-child{
+.danh-sach-gio-hang:first-child {
     border-top: 2px solid #ddd;
 }
 
-.danh-sach-gio-hang .item-gio-hang input{
+.danh-sach-gio-hang .item-gio-hang input {
     box-sizing: border-box;
     width: 35px;
     height: 30px;
@@ -547,10 +502,10 @@ main#gio-hang .danh-sach-gio-hang .item-gio-hang{
     border: 2px solid #ddd;
 }
 
-.danh-sach-gio-hang .item-gio-hang input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+.danh-sach-gio-hang .item-gio-hang input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .thanh-tien {
@@ -558,7 +513,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .thanh-tien .danh-muc-thanh-toan {
-
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
@@ -569,9 +523,8 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 550;
 }
 
-.thanh-toan .form .danh-muc{
+.thanh-toan .form .danh-muc {
     position: relative;
-
 }
 
 .thanh-toan #tong-tien {
@@ -579,7 +532,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 20px;
 }
 
-.thanh-toan #xac-nhan-thanh-toan{
+.thanh-toan #xac-nhan-thanh-toan {
     margin-top: 20px;
     width: 100%;
     padding: 10px;
@@ -609,26 +562,21 @@ input[type=number]::-webkit-outer-spin-button {
     outline: none;
 }
 
-
-
-.item-gio-hang .so-luong  i{
+.item-gio-hang .so-luong i {
     width: 20px;
     height: 20px;
     padding: 3px 0px;
     cursor: pointer;
     /* background-color: red; */
     text-align: center;
-   color: rgb(148, 148, 148);
-
-    
-    
+    color: rgb(148, 148, 148);
 }
 
 .xoa-item-gio-hang {
     cursor: pointer;
 }
 
-.header-top{
+.header-top {
     width: 100%;
     height: 40px;
     background: #000;
@@ -637,33 +585,31 @@ input[type=number]::-webkit-outer-spin-button {
 .header-top .container {
     width: 1200px;
     margin: 0 auto;
-      
 }
 
 .login-signup-label {
     float: right;
 }
 
-.login-signup-label ul li{
+.login-signup-label ul li {
     float: left;
     list-style: none;
     height: 40px;
     width: 100px;
     box-sizing: border-box;
-   
-    
 }
-.login-signup-label ul li a{
+
+.login-signup-label ul li a {
     text-decoration: none;
     color: white;
     height: 40px;
-
     padding: 10px;
     display: block;
-  
 }
 
+
 /* modal */
+
 .modal {
     width: 100%;
     height: 100%;
@@ -691,11 +637,9 @@ input[type=number]::-webkit-outer-spin-button {
     width: 100%;
     box-sizing: border-box;
     margin: 5px 0px;
-
 }
 
 .form label {
-
     font-size: 17px;
     font-weight: bold;
 }
@@ -704,10 +648,6 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 7px 10px;
     margin-bottom: 15px;
 }
-
-
-
-
 
 .form button {
     width: 100%;
@@ -727,22 +667,9 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
 }
 
-.modal-backdrop{
- z-index: 0;
+.modal-backdrop {
+    z-index: 0;
 }
 
 
-
 /* style home */
-
-
-
-
-
-
-
-
-
-
-
-
