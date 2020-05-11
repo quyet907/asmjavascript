@@ -145,6 +145,7 @@ body {
     width: 140px;
     border-left: 1px solid rgba(221, 221, 221, 0.377);
     text-align: center;
+    background-color: black;
 }
 
 #header-bot nav ul li a {
@@ -232,9 +233,7 @@ footer {
     margin-top: 50px;
 }
 
-#san-pham-noi-bat,
-#san-pham-laptop,
-#san-pham-man-hinh {
+#san-pham-noi-bat, #san-pham-laptop, #san-pham-man-hinh {
     /* background-color: green; */
     display: flex;
     transition: 0.8s ease-in-out;
@@ -305,15 +304,13 @@ footer {
     font-weight: bold;
 }
 
-.san-pham-noi-bat .item .gia-ban span,
-.item-gio-hang .gia-ban {
+.san-pham-noi-bat .item .gia-ban span, .item-gio-hang .gia-ban {
     font-size: 20px;
     font-weight: bold;
     color: rgb(250, 67, 35);
 }
 
-.san-pham-noi-bat .item .gia-truoc-giam span,
-.item-gio-hang .gia-goc {
+.san-pham-noi-bat .item .gia-truoc-giam span, .item-gio-hang .gia-goc {
     font-size: 12px;
     text-decoration: line-through;
 }
@@ -376,8 +373,7 @@ menu ul li {
     list-style: none;
 }
 
-.form-input-san-pham label,
-.form-input-san-pham label input {
+.form-input-san-pham label, .form-input-san-pham label input {
     width: 100%;
 }
 
@@ -502,8 +498,7 @@ main#gio-hang .danh-sach-gio-hang .item-gio-hang {
     border: 2px solid #ddd;
 }
 
-.danh-sach-gio-hang .item-gio-hang input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+.danh-sach-gio-hang .item-gio-hang input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
@@ -546,6 +541,34 @@ input[type=number]::-webkit-outer-spin-button {
 
 #header-bot nav .active-menu {
     background-color: #e5ad2c;
+}
+
+#header-bot nav #menu .sub-menu li {}
+
+#menu .sub-menu{
+    display: none;
+  }
+
+  #menu .sub-menu li {
+      border-bottom: 1px solid #ddd;
+  }
+
+#menu li {
+    position: relative;
+}
+
+#menu li:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    z-index: 2;
+}
+
+.sub-menu li {
+    margin-left: 0 !important;
 }
 
 .thanh-toan .form label {
@@ -607,7 +630,6 @@ input[type=number]::-webkit-outer-spin-button {
     display: block;
 }
 
-
 /* modal */
 
 .modal {
@@ -632,8 +654,7 @@ input[type=number]::-webkit-outer-spin-button {
     position: relative;
 }
 
-.form label,
-.form input {
+.form label, .form input {
     width: 100%;
     box-sizing: border-box;
     margin: 5px 0px;
@@ -670,6 +691,5 @@ input[type=number]::-webkit-outer-spin-button {
 .modal-backdrop {
     z-index: 0;
 }
-
 
 /* style home */
