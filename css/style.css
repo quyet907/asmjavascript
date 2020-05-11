@@ -227,7 +227,7 @@ main {
 }
 
 footer {
-    height: 150px;
+    height: fit-content;
     background-color: black;
     margin-top: 50px;
 }
